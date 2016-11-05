@@ -58,7 +58,9 @@
     <None Include="App.config" />
     <None Include="Data\sample_submission.csv" />
     <None Include="Data\test.csv" />
-    <None Include="Data\train.csv" />
+    <Content Include="Data\train.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
