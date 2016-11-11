@@ -68,34 +68,34 @@ namespace EtlShelterAnimal.Classes
 
                 return mult * value;
             });
-            Map(m => m.HasName).ConvertUsing(r => string.IsNullOrEmpty(r.GetField<string>(1)) ? 0 : 1);
+            Map(m => m.HasName).ConvertUsing(r => string.IsNullOrEmpty(r.GetField<string>(1)) ? "No" : "Yes");
             Map(m => m.DayPeriod).ConvertUsing(r =>
             {
                 int hour = r.GetField<DateTime>(2).Hour;
                 if (hour > 5 & hour <= 12)
-                    return "Manhã";
+                    return "Morning";
                 if (hour > 12 & hour <= 18)
-                    return "Tarde";
-                return "Noite";
+                    return "Afternoon";
+                return "Evening";
             });
             Map(m => m.IsMix).ConvertUsing(r =>
             {
                 string value = r.GetField<string>(8);
-                int mix = 0;
-                if (value.IndexOf("mix", StringComparison.OrdinalIgnoreCase) >= 0)
-                    mix = 1;
+                string mix = "No";
+                if (value.IndexOf("mix", StringComparison.OrdinalIgnoreCase) >= 0 || value.Contains("/"))
+                    mix = "Yes";
                 return mix;
             });
             Map(m => m.Castrated).ConvertUsing(r =>
             {
                 string value = r.GetField<string>(6);
-                int castrated = 0;
+                string castrated = "No";
                 if (value.IndexOf("intact", StringComparison.OrdinalIgnoreCase) >= 0)
-                    castrated = 0;
+                    castrated = "No";
                 if (value.IndexOf("neutered", StringComparison.OrdinalIgnoreCase) >= 0)
-                    castrated = 1;
+                    castrated = "Yes";
                 if (value.IndexOf("spayed", StringComparison.OrdinalIgnoreCase) >= 0)
-                    castrated = 1;
+                    castrated = "Yes";
                 return castrated;
             });
             Map(m => m.Sex).ConvertUsing(r =>
@@ -115,10 +115,10 @@ namespace EtlShelterAnimal.Classes
                     var colors = value.Split('/');
                     if (colors.Length > 1)
                     {
-                        return 0;
+                        return "No";
                     }
                 }
-                return 1;
+                return "Yes";
             });
         }
     }
