@@ -14,14 +14,11 @@ namespace EtlShelterAnimal
 
     class Program
     {
-        const string group = "dogGroups.csv";
-        const string train = "train.csv";
-        const string unknow = "Unknow";
-        public static Dictionary<string, string> dogGroups;
+        private const string unknow = "Unknow";
+        private static Dictionary<string, string> dogGroups = ReadDogGroupsFile();
 
         static void Main(string[] args)
         {
-            string dogGroupPatch = args[0] + group;
             string dest = args[1];
             if (string.IsNullOrEmpty(dest))
             {
@@ -34,18 +31,7 @@ namespace EtlShelterAnimal
                 return;
             }
 
-            using (TextReader reader = File.OpenText(dogGroupPatch))
-            {
-                CsvReader csv = new CsvReader(reader);
-                csv.Configuration.Delimiter = ";";
-                dogGroups = new Dictionary<string, string>();
-                while (csv.Read())
-                {
-                    dogGroups.Add(csv.GetField<string>(0), csv.GetField<string>(1));
-                }
-            }
-
-            List<InputData> results = ReadTrainFile().Where(register => register.Sex != "Unknow").ToList();
+            List<InputData> results = ReadTrainFile().Where(register => register.Sex != unknow).ToList();
             ExtractHolidays(results);
             ExtractDogGroup(results);
 
@@ -137,6 +123,24 @@ namespace EtlShelterAnimal
             if (value < 9.23)
                 return "Verão";
             return "Outuno";
+        }
+
+        private static Dictionary<string, string> ReadDogGroupsFile()
+        {
+            Dictionary<string, string> dogGroups = new Dictionary<string, string>();
+
+            string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Data\dogGroups.csv");
+            using (CsvReader csv = new CsvReader(File.OpenText(path)))
+            {
+                csv.Configuration.Delimiter = ";";
+
+                while (csv.Read())
+                {
+                    dogGroups.Add(csv.GetField<string>(0), csv.GetField<string>(1));
+                }
+            }
+
+            return dogGroups;
         }
 
         private static List<InputData> ReadTrainFile()

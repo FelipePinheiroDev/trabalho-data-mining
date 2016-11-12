@@ -71,6 +71,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Content Include="Data\dogGroups.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Data\sample_submission.csv" />
     <None Include="Data\test.csv" />
     <Content Include="Data\train.csv">
