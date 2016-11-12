@@ -105,7 +105,7 @@ namespace EtlShelterAnimal.Classes
                     return "Female";
                 if (value.IndexOf("male", StringComparison.OrdinalIgnoreCase) >= 0)
                     return "Male";
-                return "Unknow";
+                return Constants.Unknown;
             });
             Map(m => m.IsSingleColor).ConvertUsing(r =>
             {

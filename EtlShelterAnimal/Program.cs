@@ -14,7 +14,6 @@ namespace EtlShelterAnimal
 
     class Program
     {
-        private const string unknow = "Unknow";
         private static Dictionary<string, string> dogGroups = ReadDogGroupsFile();
 
         static void Main(string[] args)
@@ -31,7 +30,7 @@ namespace EtlShelterAnimal
                 return;
             }
 
-            List<InputData> results = ReadTrainFile().Where(register => register.Sex != unknow).ToList();
+            List<InputData> results = ReadTrainFile().Where(register => register.Sex != Constants.Unknown).ToList();
             ExtractHolidays(results);
             ExtractDogGroup(results);
 
@@ -85,7 +84,7 @@ namespace EtlShelterAnimal
                         }
                         else
                         {
-                            data.DogGroup = unknow;
+                            data.DogGroup = Constants.Unknown;
                         }
                         if (dogGroups.ContainsKey(groups[1]))
                         {
@@ -93,7 +92,7 @@ namespace EtlShelterAnimal
                         }
                         else
                         {
-                            data.AlternativeDogGroup = unknow;
+                            data.AlternativeDogGroup = Constants.Unknown;
                         }
                     }
                     else
@@ -105,8 +104,8 @@ namespace EtlShelterAnimal
                         }
                         else
                         {
-                            data.DogGroup = unknow;
-                            data.AlternativeDogGroup = unknow;
+                            data.DogGroup = Constants.Unknown;
+                            data.AlternativeDogGroup = Constants.Unknown;
                         }
                     }
                 }

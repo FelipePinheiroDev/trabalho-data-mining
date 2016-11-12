@@ -62,6 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Constants.cs" />
     <Compile Include="Classes\Holiday.cs" />
     <Compile Include="Classes\HolidaySearch.cs" />
     <Compile Include="Classes\InputData.cs" />
