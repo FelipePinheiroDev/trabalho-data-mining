@@ -62,10 +62,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\CatPopularity.cs" />
     <Compile Include="Classes\Constants.cs" />
+    <Compile Include="Classes\DogPopularity.cs" />
     <Compile Include="Classes\Holiday.cs" />
     <Compile Include="Classes\HolidaySearch.cs" />
     <Compile Include="Classes\InputData.cs" />
+    <Compile Include="Classes\IPopularity.cs" />
     <Compile Include="Classes\Transform.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

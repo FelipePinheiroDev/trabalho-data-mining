@@ -28,39 +28,28 @@ namespace EtlShelterAnimal.Classes
                     value = int.Parse(values[0]);
                     switch (values[1])
                     {
-                        case "months":
+                        case "day":
+                        case "days":
                             {
-                                mult = 30;
+                                mult = 1;
                                 break;
                             }
-                        case "years":
-                            {
-                                mult = 365;
-                                break;
-                            }
-                        case "year":
-                            {
-                                mult = 365;
-                                break;
-                            }
+                        case "week":
                         case "weeks":
                             {
                                 mult = 7;
                                 break;
                             }
-                        case "week":
-                            {
-                                mult = 7;
-                                break;
-                            }
                         case "month":
+                        case "months":
                             {
                                 mult = 30;
                                 break;
                             }
-                        case "days":
+                        case "year":
+                        case "years":
                             {
-                                mult = 1;
+                                mult = 365;
                                 break;
                             }
                     }
@@ -89,22 +78,25 @@ namespace EtlShelterAnimal.Classes
             Map(m => m.Castrated).ConvertUsing(r =>
             {
                 string value = r.GetField<string>(6);
-                string castrated = "No";
+
                 if (value.IndexOf("intact", StringComparison.OrdinalIgnoreCase) >= 0)
-                    castrated = "No";
-                if (value.IndexOf("neutered", StringComparison.OrdinalIgnoreCase) >= 0)
-                    castrated = "Yes";
-                if (value.IndexOf("spayed", StringComparison.OrdinalIgnoreCase) >= 0)
-                    castrated = "Yes";
-                return castrated;
+                    return "No";
+
+                if (value.IndexOf("neutered", StringComparison.OrdinalIgnoreCase) >= 0 || value.IndexOf("spayed", StringComparison.OrdinalIgnoreCase) >= 0)
+                    return "Yes";
+
+                return Constants.Unknown;
             });
             Map(m => m.Sex).ConvertUsing(r =>
             {
                 string value = r.GetField<string>(6);
+
                 if (value.IndexOf("female", StringComparison.OrdinalIgnoreCase) >= 0)
                     return "Female";
+
                 if (value.IndexOf("male", StringComparison.OrdinalIgnoreCase) >= 0)
                     return "Male";
+
                 return Constants.Unknown;
             });
             Map(m => m.IsSingleColor).ConvertUsing(r =>

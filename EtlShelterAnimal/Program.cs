@@ -30,9 +30,10 @@ namespace EtlShelterAnimal
                 return;
             }
 
-            List<InputData> results = ReadTrainFile().Where(register => register.Sex != Constants.Unknown).ToList();
+            List<InputData> results = ReadTrainFile();
             ExtractHolidays(results);
             ExtractDogGroup(results);
+            ExtractIsPopular(results);
 
             string destPath = Path.Combine(dest, DateTime.Now.Ticks.ToString()) + ".csv";
             FileStream fs = new FileStream(destPath, FileMode.CreateNew);
@@ -109,6 +110,29 @@ namespace EtlShelterAnimal
                         }
                     }
                 }
+            }
+        }
+
+        private static void ExtractIsPopular(List<InputData> results)
+        {
+            IPopularity catPopularity = new CatPopularity();
+            IPopularity dogPopularity = new DogPopularity();
+
+            foreach (InputData result in results)
+            {
+                int year = result.DateAndTime.Year;
+
+                IPopularity popularity = result.AnimalType == "Cat" ? catPopularity : dogPopularity;
+
+                bool isPopular = false;
+                string breedWithouMix = result.Breed.Replace(" Mix", string.Empty);
+                string[] breeds = breedWithouMix.Split('/');
+                foreach (string breed in breeds)
+                {
+                    isPopular |= popularity.IsPopular(year, breed);
+                }
+
+                result.IsPopular = isPopular ? "Yes" : "No";
             }
         }
 
