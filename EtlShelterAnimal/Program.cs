@@ -18,7 +18,7 @@ namespace EtlShelterAnimal
 
         static void Main(string[] args)
         {
-            args = new string[] { @"C:\Users\eduar\Documents\Git\EtlShelterAnimal\Data", @"C:\Users\eduar\Documents\Git\EtlShelterAnimal\Data" };
+            //args = new string[] { @"C:\Users\eduar\Documents\Git\EtlShelterAnimal\Data", @"C:\Users\eduar\Documents\Git\EtlShelterAnimal\Data" };
             string dest = args[1];
             if (string.IsNullOrEmpty(dest))
             {
