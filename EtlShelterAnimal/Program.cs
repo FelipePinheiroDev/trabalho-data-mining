@@ -14,10 +14,11 @@ namespace EtlShelterAnimal
 
     class Program
     {
-        private static Dictionary<string, string> dogGroups = ReadDogGroupsFile();
+        private static Dictionary<string, string> breedGroups = ReadBreedGroupsFile();
 
         static void Main(string[] args)
         {
+            args = new string[] { @"C:\Users\eduar\Documents\Git\EtlShelterAnimal\Data", @"C:\Users\eduar\Documents\Git\EtlShelterAnimal\Data" };
             string dest = args[1];
             if (string.IsNullOrEmpty(dest))
             {
@@ -32,7 +33,7 @@ namespace EtlShelterAnimal
 
             List<InputData> results = ReadTrainFile();
             ExtractHolidays(results);
-            ExtractDogGroup(results);
+            ExtractBreedGroup(results);
             ExtractIsPopular(results);
 
             string destPath = Path.Combine(dest, DateTime.Now.Ticks.ToString()) + ".csv";
@@ -67,29 +68,29 @@ namespace EtlShelterAnimal
             }
         }
 
-        private static void ExtractDogGroup(List<InputData> results)
+        private static void ExtractBreedGroup(List<InputData> results)
         {
             string value;
             string[] groups;
             foreach (InputData data in results)
             {
-                if (!string.IsNullOrEmpty(data.Breed) && data.AnimalType.Equals("Dog"))
+                if (!string.IsNullOrEmpty(data.Breed))
                 {
                     value = Regex.Replace(data.Breed, "mix", string.Empty, RegexOptions.IgnoreCase).TrimEnd();
                     if (value.Contains("/"))
                     {
                         groups = value.Split('/');
-                        if (dogGroups.ContainsKey(groups[0]))
+                        if (breedGroups.ContainsKey(groups[0]))
                         {
-                            data.DogGroup = dogGroups[groups[0]];
+                            data.BreedGroup = breedGroups[groups[0]];
                         }
                         else
                         {
-                            data.DogGroup = Constants.Unknown;
+                            data.BreedGroup = Constants.Unknown;
                         }
-                        if (dogGroups.ContainsKey(groups[1]))
+                        if (breedGroups.ContainsKey(groups[1]))
                         {
-                            data.AlternativeDogGroup = dogGroups[groups[1]];
+                            data.AlternativeDogGroup = breedGroups[groups[1]];
                         }
                         else
                         {
@@ -98,14 +99,14 @@ namespace EtlShelterAnimal
                     }
                     else
                     {
-                        if (dogGroups.ContainsKey(value))
+                        if (breedGroups.ContainsKey(value))
                         {
-                            data.DogGroup = dogGroups[value];
-                            data.AlternativeDogGroup = data.DogGroup;
+                            data.BreedGroup = breedGroups[value];
+                            data.AlternativeDogGroup = data.BreedGroup;
                         }
                         else
                         {
-                            data.DogGroup = Constants.Unknown;
+                            data.BreedGroup = Constants.Unknown;
                             data.AlternativeDogGroup = Constants.Unknown;
                         }
                     }
@@ -148,11 +149,11 @@ namespace EtlShelterAnimal
             return "Outuno";
         }
 
-        private static Dictionary<string, string> ReadDogGroupsFile()
+        private static Dictionary<string, string> ReadBreedGroupsFile()
         {
             Dictionary<string, string> dogGroups = new Dictionary<string, string>();
 
-            string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Data\dogGroups.csv");
+            string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Data\breedGroups.csv");
             using (CsvReader csv = new CsvReader(File.OpenText(path)))
             {
                 csv.Configuration.Delimiter = ";";

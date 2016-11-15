@@ -39,7 +39,7 @@ namespace EtlShelterAnimal.Classes
         public string IsHoliday { get; set; }
         public string Holiday { get; set; }
         public string Season { get; internal set; }
-        public string DogGroup { get; internal set; }
+        public string BreedGroup { get; internal set; }
         public string AlternativeDogGroup { get; internal set; }
 
         /// <summary>
