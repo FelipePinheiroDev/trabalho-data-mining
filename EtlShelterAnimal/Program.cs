@@ -30,21 +30,44 @@ namespace EtlShelterAnimal
                 return;
             }
 
-            List<InputData> results = ReadTrainFile();
-            ExtractHolidays(results);
-            ExtractBreedGroup(results);
-            ExtractIsPopular(results);
+            //List<InputData> results = ReadTrainFile();
+            //ExtractHolidays(results);
+            //ExtractBreedGroup(results);
+            //ExtractIsPopular(results);
 
-            string destPath = string.Concat(Path.Combine(dest, "train"), ".csv");
-            using (FileStream fs = new FileStream(destPath, FileMode.CreateNew))
-            using (StreamWriter writer = new StreamWriter(fs, Encoding.GetEncoding("iso-8859-1")))
-            using (CsvWriter csvWriter = new CsvWriter(writer))
-            {
-                List<OutputCsvLine> outputData = results.Select(register => new OutputCsvLine(register)).ToList();
-                csvWriter.WriteRecords(outputData);
-            }
+            //string destPath = string.Concat(Path.Combine(dest, "train"), ".csv");
+            //using (FileStream fs = new FileStream(destPath, FileMode.CreateNew))
+            //using (StreamWriter writer = new StreamWriter(fs, Encoding.GetEncoding("iso-8859-1")))
+            //using (CsvWriter csvWriter = new CsvWriter(writer))
+            //{
+            //    List<OutputCsvLine> outputData = results.Select(register => new OutputCsvLine(register)).ToList();
+            //    csvWriter.WriteRecords(outputData);
+            //}
 
+            //List<InputData> resultsTest = ReadTestFile();
+            //ExtractHolidays(resultsTest);
+            //ExtractBreedGroup(resultsTest);
+            //ExtractIsPopular(resultsTest);
 
+            //string destPathTest = string.Concat(Path.Combine(dest, "test"), ".csv");
+            //using (FileStream fs = new FileStream(destPathTest, FileMode.CreateNew))
+            //using (StreamWriter writer = new StreamWriter(fs, Encoding.GetEncoding("iso-8859-1")))
+            //using (CsvWriter csvWriter = new CsvWriter(writer))
+            //{
+            //    List<OutputCsvLine> outputData = resultsTest.Select(register => new OutputCsvLine(register)).ToList();
+            //    csvWriter.WriteRecords(outputData);
+            //}
+
+            //List<InputData> testInput = ReadTestFile();
+            //Dictionary<int, string> predictionsIndexedById = ReadPredictionFile().ToDictionary(prediction => prediction.ID, prediction => prediction.OutcomeTypePredicted);
+
+            //List<Submission> submissions = new List<Submission>();
+            //for (int i = 1; i <= testInput.Count; i++)
+            //{
+            //    submissions.Add(new Submission(i, predictionsIndexedById[i]));
+            //}
+
+            //WriteSubmissionFile(dest, submissions);
         }
 
         private static void ExtractHolidays(List<InputData> results)
@@ -166,6 +189,36 @@ namespace EtlShelterAnimal
             return dogGroups;
         }
 
+        private static List<Prediction> ReadPredictionFile()
+        {
+            List<Prediction> predictions = new List<Prediction>();
+
+            string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Data\prediction_by_weka.csv");
+            using (CsvReader csv = new CsvReader(File.OpenText(path)))
+            {
+                while (csv.Read())
+                {
+                    predictions.Add(new Prediction
+                    {
+                        ID = csv.GetField<int>("inst#"),
+                        OutcomeTypePredicted = csv.GetField<string>("predicted").Substring(2)
+                    });
+                }
+            }
+
+            return predictions;
+        }
+
+        private static List<InputData> ReadTestFile()
+        {
+            string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Data\test.csv");
+            using (CsvReader csv = new CsvReader(File.OpenText(path)))
+            {
+                csv.Configuration.RegisterClassMap<TransformTest>();
+                return csv.GetRecords<InputData>().ToList();
+            }
+        }
+
         private static List<InputData> ReadTrainFile()
         {
             string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Data\train.csv");
@@ -173,6 +226,17 @@ namespace EtlShelterAnimal
             {
                 csv.Configuration.RegisterClassMap<Transform>();
                 return csv.GetRecords<InputData>().ToList();
+            }
+        }
+
+        private static void WriteSubmissionFile(string destinationFolder, IEnumerable<Submission> submissions)
+        {
+            string destination = string.Concat(Path.Combine(destinationFolder, "submission"), ".csv");
+            using (FileStream fs = new FileStream(destination, FileMode.CreateNew))
+            using (StreamWriter writer = new StreamWriter(fs, Encoding.GetEncoding("iso-8859-1")))
+            using (CsvWriter csvWriter = new CsvWriter(writer))
+            {
+                csvWriter.WriteRecords(submissions);
             }
         }
     }

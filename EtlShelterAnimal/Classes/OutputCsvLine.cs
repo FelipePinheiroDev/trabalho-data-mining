@@ -18,7 +18,7 @@
             BreedGroup = register.BreedGroup;
             IsPopularBreed = register.IsPopularBreed;
             IsSingleColor = register.IsSingleColor;
-            OutcomeType = register.OutcomeType;
+            OutcomeType = register.OutcomeType ?? "Return_to_owner";
         }
 
         public string HasName { get; set; }

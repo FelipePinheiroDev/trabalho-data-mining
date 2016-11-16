@@ -70,6 +70,9 @@
     <Compile Include="Classes\InputData.cs" />
     <Compile Include="Classes\IPopularity.cs" />
     <Compile Include="Classes\OutputCsvLine.cs" />
+    <Compile Include="Classes\Prediction.cs" />
+    <Compile Include="Classes\Submission.cs" />
+    <Compile Include="Classes\TransformTest.cs" />
     <Compile Include="Classes\Transform.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,11 +90,17 @@
     <Content Include="Data\breedGroups.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Data\prediction_by_weka.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Data\sample_submission.csv" />
-    <None Include="Data\test.csv" />
+    <Content Include="Data\test.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Data\train.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Data\submission_to_weka.csv" />
     <None Include="packages.config" />
     <Content Include="Weka Classifier Outputs\BayesNet.txt" />
   </ItemGroup>
