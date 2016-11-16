@@ -2,7 +2,6 @@
 using EtlShelterAnimal.Classes;
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -36,15 +35,13 @@ namespace EtlShelterAnimal
             ExtractBreedGroup(results);
             ExtractIsPopular(results);
 
-            string destPath = Path.Combine(dest, DateTime.Now.Ticks.ToString()) + ".csv";
-            FileStream fs = new FileStream(destPath, FileMode.CreateNew);
-
+            string destPath = string.Concat(Path.Combine(dest, "train"), ".csv");
+            using (FileStream fs = new FileStream(destPath, FileMode.CreateNew))
             using (StreamWriter writer = new StreamWriter(fs, Encoding.GetEncoding("iso-8859-1")))
+            using (CsvWriter csvWriter = new CsvWriter(writer))
             {
-                var csvWriter = new CsvWriter(writer);
-                csvWriter.Configuration.CultureInfo = CultureInfo.CurrentCulture;
-                csvWriter.Configuration.Delimiter = ";";
-                csvWriter.WriteRecords(results);
+                List<OutputCsvLine> outputData = results.Select(register => new OutputCsvLine(register)).ToList();
+                csvWriter.WriteRecords(outputData);
             }
         }
 
