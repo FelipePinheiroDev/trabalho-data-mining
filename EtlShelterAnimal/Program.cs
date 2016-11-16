@@ -19,7 +19,7 @@ namespace EtlShelterAnimal
         static void Main(string[] args)
         {
             //args = new string[] { @"C:\Users\eduar\Documents\Git\EtlShelterAnimal\Data", @"C:\Users\eduar\Documents\Git\EtlShelterAnimal\Data" };
-            string dest = args[1];
+            string dest = args[0];
             if (string.IsNullOrEmpty(dest))
             {
                 Console.WriteLine("A sintaxe do comando está incorreta");
