@@ -48,6 +48,56 @@ namespace EtlShelterAnimal
             }
         }
 
+        private static IEnumerable<List<InputData>> DivideForCrossValidation(IEnumerable<InputData> data, int numberOfSubsets)
+        {
+            List<List<InputData>> crossValidationSubsets = new List<List<InputData>>();
+
+            Random random = new Random();
+
+            // Separar por classes
+            List<List<InputData>> dataDividedByClass = data.ToLookup(register => register.OutcomeType).Select(classGroup => classGroup.ToList()).ToList();
+
+            Dictionary<int, int> numberOfElementsIndexedByIndex = new Dictionary<int, int>();
+            for (int i = 0; i < dataDividedByClass.Count; i++)
+            {
+                numberOfElementsIndexedByIndex.Add(i, dataDividedByClass[i].Count);
+            }
+
+            for (int i = 0; i < numberOfSubsets; i++)
+            {
+                List<InputData> crossValidationSubset = new List<InputData>();
+
+                for (int j = 0; j < dataDividedByClass.Count; j++)
+                {
+                    List<InputData> classList = dataDividedByClass[j];
+
+                    int added = 0;
+                    while (added < (numberOfElementsIndexedByIndex[j] / numberOfSubsets) && classList.Any())
+                    {
+                        int index = random.Next(classList.Count);
+                        crossValidationSubset.Add(classList[index]);
+                        classList.RemoveAt(index);
+
+                        added++;
+                    }
+                }
+
+                crossValidationSubsets.Add(crossValidationSubset);
+            }
+
+            foreach (List<InputData> classList in dataDividedByClass)
+            {
+                while (classList.Any())
+                {
+                    int crossValidationSubsetNumber = random.Next(numberOfSubsets);
+                    crossValidationSubsets[crossValidationSubsetNumber].Add(classList[0]);
+                    classList.RemoveAt(0);
+                }
+            }
+
+            return crossValidationSubsets;
+        }
+
         private static void ExtractHolidays(List<InputData> results)
         {
             List<int> years = results.Select(r => r.DateAndTime.Year).Distinct().ToList();
@@ -174,6 +224,41 @@ namespace EtlShelterAnimal
             {
                 csv.Configuration.RegisterClassMap<Transform>();
                 return csv.GetRecords<InputData>().ToList();
+            }
+        }
+
+        private static void WriteCrossValidationFiles(List<List<InputData>> crossValidationSubsets, string destinationFolder)
+        {
+            List<int> indexes = new List<int>();
+            for (int i = 0; i < crossValidationSubsets.Count; i++)
+            {
+                indexes.Add(i);
+            }
+
+            for (int i = 0; i < crossValidationSubsets.Count; i++)
+            {
+                string trainDestinationPath = string.Concat(Path.Combine(destinationFolder, string.Concat("train-", i)), ".csv");
+
+                using (FileStream fileStream = new FileStream(trainDestinationPath, FileMode.CreateNew))
+                using (StreamWriter streamWriter = new StreamWriter(fileStream, Encoding.GetEncoding("iso-8859-1")))
+                using (CsvWriter csvWriter = new CsvWriter(streamWriter))
+                {
+                    List<InputData> test = crossValidationSubsets[i];
+                    List<OutputCsvLine> train = crossValidationSubsets.Where(subset => !subset.Equals(test)).SelectMany(data => data).ToList().Select(data => new OutputCsvLine(data)).ToList();
+
+                    csvWriter.WriteRecords(train);
+                }
+
+                string testDestinationPath = string.Concat(Path.Combine(destinationFolder, string.Concat("test-", i)), ".csv");
+
+                using (FileStream fileStream = new FileStream(testDestinationPath, FileMode.CreateNew))
+                using (StreamWriter streamWriter = new StreamWriter(fileStream, Encoding.GetEncoding("iso-8859-1")))
+                using (CsvWriter csvWriter = new CsvWriter(streamWriter))
+                {
+                    List<OutputCsvLine> test = crossValidationSubsets[i].Select(data => new OutputCsvLine(data)).ToList();
+
+                    csvWriter.WriteRecords(test);
+                }
             }
         }
     }
