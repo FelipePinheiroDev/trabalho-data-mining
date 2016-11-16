@@ -1,0 +1,57 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.lazy.IBk -K 75 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     train
+Instances:    26729
+Attributes:   15
+              HasName
+              DayPeriod
+              WeekDay
+              Month
+              IsHoliday
+              Season
+              AnimalType
+              Sex
+              Castrated
+              DaysuponOutcome
+              IsMix
+              BreedGroup
+              IsPopularBreed
+              IsSingleColor
+              OutcomeType
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 75 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       16757               62.6922 %
+Incorrectly Classified Instances      9972               37.3078 %
+Total Number of Instances            26729     
+
+=== Detailed Accuracy By Class ===
+
+                 Precision  Recall   F-Measure  Class
+                 0,487      0,260    0,339      Return_to_owner
+                 0,000      0,000    0,000      Euthanasia
+                 0,588      0,930    0,720      Adoption
+                 0,770      0,584    0,664      Transfer
+                 0,000      0,000    0,000      Died
+Weighted Avg.    0,595      0,627    0,585      
+
+=== Confusion Matrix ===
+
+     a     b     c     d     e   <-- classified as
+  1244     0  3192   350     0 |     a = Return_to_owner
+   261     0   417   877     0 |     b = Euthanasia
+   496     0 10012   261     0 |     c = Adoption
+   545     1  3375  5501     0 |     d = Transfer
+     8     0    33   156     0 |     e = Died
+

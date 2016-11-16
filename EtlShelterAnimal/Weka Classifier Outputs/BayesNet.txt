@@ -1,0 +1,79 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.bayes.BayesNet -D -Q weka.classifiers.bayes.net.search.local.K2 -- -P 1 -S BAYES -E weka.classifiers.bayes.net.estimate.SimpleEstimator -- -A 0.5
+Relation:     train
+Instances:    26729
+Attributes:   15
+              HasName
+              DayPeriod
+              WeekDay
+              Month
+              IsHoliday
+              Season
+              AnimalType
+              Sex
+              Castrated
+              DaysuponOutcome
+              IsMix
+              BreedGroup
+              IsPopularBreed
+              IsSingleColor
+              OutcomeType
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Bayes Network Classifier
+not using ADTree
+#attributes=15 #classindex=14
+Network structure (nodes followed by parents)
+HasName(2): OutcomeType 
+DayPeriod(3): OutcomeType 
+WeekDay(7): OutcomeType 
+Month(12): OutcomeType 
+IsHoliday(2): OutcomeType 
+Season(4): OutcomeType 
+AnimalType(2): OutcomeType 
+Sex(3): OutcomeType 
+Castrated(3): OutcomeType 
+DaysuponOutcome(12): OutcomeType 
+IsMix(2): OutcomeType 
+BreedGroup(14): OutcomeType 
+IsPopularBreed(2): OutcomeType 
+IsSingleColor(2): OutcomeType 
+OutcomeType(5): 
+LogScore Bayes: -424983.07065239566
+LogScore BDeu: -425991.802650999
+LogScore MDL: -425880.32909818465
+LogScore ENTROPY: -424432.85147377016
+LogScore AIC: -424716.85147377016
+
+
+Time taken to build model: 0.45 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       16365               61.2256 %
+Incorrectly Classified Instances     10364               38.7744 %
+Total Number of Instances            26729     
+
+=== Detailed Accuracy By Class ===
+
+                 Precision  Recall   F-Measure  Class
+                 0,403      0,716    0,515      Return_to_owner
+                 0,478      0,042    0,078      Euthanasia
+                 0,693      0,674    0,683      Adoption
+                 0,738      0,595    0,659      Transfer
+                 0,000      0,000    0,000      Died
+Weighted Avg.    0,639      0,612    0,605      
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e   <-- classified as
+ 3426   11 1107  242    0 |    a = Return_to_owner
+  537   66  125  827    0 |    b = Euthanasia
+ 2748    5 7263  753    0 |    c = Adoption
+ 1780   55 1977 5610    0 |    d = Transfer
+   16    1   15  165    0 |    e = Died
+

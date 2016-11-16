@@ -1,0 +1,164 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.bayes.NaiveBayes 
+Relation:     train
+Instances:    26729
+Attributes:   15
+              HasName
+              DayPeriod
+              WeekDay
+              Month
+              IsHoliday
+              Season
+              AnimalType
+              Sex
+              Castrated
+              DaysuponOutcome
+              IsMix
+              BreedGroup
+              IsPopularBreed
+              IsSingleColor
+              OutcomeType
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Naive Bayes Classifier
+
+                            Class
+Attribute         Return_to_owner      Euthanasia        Adoption        Transfer            Died
+                           (0.18)          (0.06)           (0.4)          (0.35)          (0.01)
+==================================================================================================
+HasName
+  Yes                       4634.0           741.0          9092.0          4498.0            78.0
+  No                         154.0           816.0          1679.0          4926.0           121.0
+  [total]                   4788.0          1557.0         10771.0          9424.0           199.0
+
+DayPeriod
+  Afternoon                 3385.0           957.0          8172.0          5900.0            77.0
+  Morning                   1211.0           547.0          1873.0          2921.0           113.0
+  Evening                    193.0            54.0           727.0           604.0            10.0
+  [total]                   4789.0          1558.0         10772.0          9425.0           200.0
+
+WeekDay
+  Wed                        690.0           232.0          1195.0          1371.0            27.0
+  Sun                        699.0           174.0          2218.0          1198.0            33.0
+  Sat                        653.0           164.0          2309.0          1197.0            30.0
+  Fri                        649.0           236.0          1249.0          1425.0            32.0
+  Thu                        642.0           251.0          1120.0          1347.0            21.0
+  Tue                        737.0           247.0          1331.0          1553.0            33.0
+  Mon                        723.0           258.0          1354.0          1338.0            28.0
+  [total]                   4793.0          1562.0         10776.0          9429.0           204.0
+
+Month
+  February                   413.0           110.0           820.0           524.0            11.0
+  October                    475.0           172.0          1102.0          1109.0            28.0
+  January                    508.0           118.0          1046.0           654.0            13.0
+  July                       318.0           146.0          1152.0           865.0            30.0
+  November                   532.0           147.0          1082.0           894.0            18.0
+  April                      380.0           102.0           501.0           703.0             8.0
+  March                      337.0           109.0           572.0           473.0            12.0
+  May                        368.0           131.0           687.0           894.0            19.0
+  December                   524.0           151.0          1251.0           759.0            11.0
+  June                       333.0           162.0           831.0           970.0            28.0
+  September                  311.0           107.0           781.0           797.0            13.0
+  August                     299.0           112.0           956.0           792.0            18.0
+  [total]                   4798.0          1567.0         10781.0          9434.0           209.0
+
+IsHoliday
+  No                        4233.0          1358.0          9257.0          8233.0           177.0
+  Yes                        555.0           199.0          1514.0          1191.0            22.0
+  [total]                   4788.0          1557.0         10771.0          9424.0           199.0
+
+Season
+  Winter                    1256.0           335.0          2436.0          1649.0            34.0
+  Fall                      1529.0           468.0          3433.0          2760.0            55.0
+  Summer                     926.0           363.0          2887.0          2452.0            59.0
+  Spring                    1079.0           393.0          2017.0          2565.0            53.0
+  [total]                   4790.0          1559.0         10773.0          9426.0           201.0
+
+AnimalType
+  Dog                       4287.0           846.0          6498.0          3918.0            51.0
+  Cat                        501.0           711.0          4273.0          5506.0           148.0
+  [total]                   4788.0          1557.0         10771.0          9424.0           199.0
+
+Sex
+  Male                      2725.0           822.0          5381.0          4282.0            99.0
+  Female                    2050.0           634.0          5390.0          4187.0            75.0
+  Unknown                     14.0           102.0             1.0           956.0            26.0
+  [total]                   4789.0          1558.0         10772.0          9425.0           200.0
+
+Castrated
+  Yes                       3996.0           577.0         10409.0          3584.0            38.0
+  No                         779.0           879.0           362.0          4885.0           136.0
+  Unknown                     14.0           102.0             1.0           956.0            26.0
+  [total]                   4789.0          1558.0         10772.0          9425.0           200.0
+
+DaysuponOutcome
+  mean                   1486.6416       1426.6912        580.7262        536.5184         479.079
+  std. dev.              1333.7245       1541.2866        872.0051        856.4285       1016.6705
+  weight sum                  4786            1555           10769            9422             197
+  precision               173.8095        173.8095        173.8095        173.8095        173.8095
+
+IsMix
+  Yes                       4347.0          1492.0         10327.0          8987.0           190.0
+  No                         441.0            65.0           444.0           437.0             9.0
+  [total]                   4788.0          1557.0         10771.0          9424.0           199.0
+
+BreedGroup
+  Herding                    655.0           116.0          1253.0           598.0             7.0
+  Group 4                    442.0           670.0          3930.0          5229.0           141.0
+  Pit Bull                   704.0           293.0           655.0           540.0             9.0
+  Non-Sporting               213.0            44.0           188.0           159.0             4.0
+  Terrier                    357.0            45.0           598.0           301.0             4.0
+  Toy                        921.0           133.0          1511.0          1004.0            19.0
+  Working                    418.0            76.0           488.0           296.0             6.0
+  Group 2                     29.0            32.0           203.0           175.0             6.0
+  Unknown                     46.0             7.0           101.0            41.0             2.0
+  Hound                      338.0            40.0           648.0           379.0             2.0
+  Group 3                     26.0             7.0            97.0            79.0             3.0
+  Sporting                   632.0            97.0          1035.0           596.0             6.0
+  Group 1                      7.0             5.0            45.0            26.0             1.0
+  Terrier&Toy                 12.0             4.0            31.0            13.0             1.0
+  [total]                   4800.0          1569.0         10783.0          9436.0           211.0
+
+IsPopularBreed
+  No                        3283.0          1288.0          8279.0          7977.0           180.0
+  Yes                       1505.0           269.0          2492.0          1447.0            19.0
+  [total]                   4788.0          1557.0         10771.0          9424.0           199.0
+
+IsSingleColor
+  No                        2890.0           834.0          5817.0          4296.0            92.0
+  Yes                       1898.0           723.0          4954.0          5128.0           107.0
+  [total]                   4788.0          1557.0         10771.0          9424.0           199.0
+
+
+
+Time taken to build model: 0.1 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       16348               61.162  %
+Incorrectly Classified Instances     10381               38.838  %
+Total Number of Instances            26729     
+
+=== Detailed Accuracy By Class ===
+
+                 Precision  Recall   F-Measure  Class
+                 0,436      0,507    0,469      Return_to_owner
+                 0,399      0,128    0,194      Euthanasia
+                 0,643      0,736    0,686      Adoption
+                 0,695      0,616    0,653      Transfer
+                 0,000      0,000    0,000      Died
+Weighted Avg.    0,605      0,612    0,602      
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e   <-- classified as
+ 2425   62 1949  350    0 |    a = Return_to_owner
+  416  199  167  773    0 |    b = Euthanasia
+ 1481  110 7921 1257    0 |    c = Adoption
+ 1225  121 2273 5803    0 |    d = Transfer
+   12    7   14  164    0 |    e = Died
+
