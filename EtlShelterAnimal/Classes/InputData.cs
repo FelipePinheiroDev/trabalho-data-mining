@@ -6,7 +6,7 @@ namespace EtlShelterAnimal.Classes
 {
     public class InputData
     {
-
+        private static CultureInfo _enUSCulture = new CultureInfo("en-US");
 
         public DateTime DateAndTime { get; set; }
         public string OutcomeType { get; set; }
@@ -24,7 +24,7 @@ namespace EtlShelterAnimal.Classes
         {
             get
             {
-                string input = DateAndTime.ToString("ddd", CultureInfo.CurrentCulture);
+                string input = DateAndTime.ToString("ddd", _enUSCulture);
                 return input.First().ToString().ToUpper() + string.Join("", input.Skip(1));
             }
         }
@@ -32,7 +32,7 @@ namespace EtlShelterAnimal.Classes
         {
             get
             {
-                string input = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(DateAndTime.Month);
+                string input = _enUSCulture.DateTimeFormat.GetMonthName(DateAndTime.Month);
                 return input.First().ToString().ToUpper() + string.Join("", input.Skip(1));
             }
         }

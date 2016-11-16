@@ -191,12 +191,12 @@ namespace EtlShelterAnimal
         {
             float value = (float)date.Month + date.Day / 100;
             if (value < 3.21 || value >= 12.22)
-                return "Inverno";
+                return "Winter";
             if (value < 6.21)
-                return "Primavera";
+                return "Spring";
             if (value < 9.23)
-                return "Verão";
-            return "Outuno";
+                return "Summer";
+            return "Fall";
         }
 
         private static Dictionary<string, string> ReadBreedGroupsFile()
