@@ -59,6 +59,6 @@ namespace EtlShelterAnimal.Classes
         /// 2012 - http://www.akc.org/press-center/most-popular-dog-breeds-in-america/
         /// Years after 2015 will use the list for 2015.
         /// </summary>
-        public string IsPopular { get; set; }
+        public string IsPopularBreed { get; set; }
     }
 }

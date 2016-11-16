@@ -16,7 +16,7 @@
             DaysuponOutcome = register.DaysuponOutcome;
             IsMix = register.IsMix;
             BreedGroup = register.BreedGroup;
-            IsPopularBreed = register.IsPopular;
+            IsPopularBreed = register.IsPopularBreed;
             IsSingleColor = register.IsSingleColor;
             OutcomeType = register.OutcomeType;
         }

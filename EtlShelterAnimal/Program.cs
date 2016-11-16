@@ -183,7 +183,7 @@ namespace EtlShelterAnimal
                     isPopular |= popularity.IsPopular(year, breed);
                 }
 
-                result.IsPopular = isPopular ? "Yes" : "No";
+                result.IsPopularBreed = isPopular ? "Yes" : "No";
             }
         }
 
