@@ -8,7 +8,6 @@
             DayPeriod = register.DayPeriod;
             WeekDay = register.WeekDay;
             Month = register.Month;
-            IsHoliday = register.IsHoliday;
             Season = register.Season;
             AnimalType = register.AnimalType;
             Sex = register.Sex;
@@ -26,8 +25,6 @@
         public string WeekDay { get; set; }
 
         public string Month { get; set; }
-
-        public string IsHoliday { get; set; }
 
         public string Season { get; set; }
 

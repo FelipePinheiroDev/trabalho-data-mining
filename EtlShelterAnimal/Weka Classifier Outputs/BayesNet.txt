@@ -3,12 +3,11 @@
 Scheme:       weka.classifiers.bayes.BayesNet -D -Q weka.classifiers.bayes.net.search.local.K2 -- -P 1 -S BAYES -E weka.classifiers.bayes.net.estimate.SimpleEstimator -- -A 0.5
 Relation:     train
 Instances:    26729
-Attributes:   13
+Attributes:   12
               HasName
               DayPeriod
               WeekDay
               Month
-              IsHoliday
               Season
               AnimalType
               Sex
@@ -23,13 +22,12 @@ Test mode:    10-fold cross-validation
 
 Bayes Network Classifier
 not using ADTree
-#attributes=13 #classindex=12
+#attributes=12 #classindex=11
 Network structure (nodes followed by parents)
 HasName(2): OutcomeType 
 DayPeriod(3): OutcomeType 
 WeekDay(7): OutcomeType 
 Month(12): OutcomeType 
-IsHoliday(2): OutcomeType 
 Season(4): OutcomeType 
 AnimalType(2): OutcomeType 
 Sex(3): OutcomeType 
@@ -38,11 +36,11 @@ DaysuponOutcome(12): OutcomeType
 BreedGroup(14): OutcomeType 
 IsPopularBreed(2): OutcomeType 
 OutcomeType(5): 
-LogScore Bayes: -401211.08832574345
-LogScore BDeu: -402201.45400839474
-LogScore MDL: -402088.0452593069
-LogScore ENTROPY: -400691.5351568789
-LogScore AIC: -400965.5351568789
+LogScore Bayes: -390870.8098046936
+LogScore BDeu: -391851.99232936895
+LogScore MDL: -391737.6173915026
+LogScore ENTROPY: -390366.5910500678
+LogScore AIC: -390635.5910500678
 
 
 Time taken to build model: 0.13 seconds
@@ -50,31 +48,26 @@ Time taken to build model: 0.13 seconds
 === Stratified cross-validation ===
 === Summary ===
 
-Correctly Classified Instances       16400               61.3566 %
-Incorrectly Classified Instances     10329               38.6434 %
-Kappa statistic                          0.4352
-Mean absolute error                      0.1824
-Root mean squared error                  0.3252
-Relative absolute error                 67.2578 %
-Root relative squared error             88.3213 %
+Correctly Classified Instances       16385               61.3005 %
+Incorrectly Classified Instances     10344               38.6995 %
 Total Number of Instances            26729     
 
 === Detailed Accuracy By Class ===
 
-                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0,715    0,231    0,403      0,715    0,516      0,399    0,821     0,442     Return_to_owner
-                 0,044    0,003    0,500      0,044    0,082      0,136    0,785     0,238     Euthanasia
-                 0,678    0,203    0,692      0,678    0,685      0,476    0,844     0,764     Adoption
-                 0,595    0,112    0,743      0,595    0,660      0,512    0,796     0,741     Transfer
-                 0,000    0,000    0,000      0,000    0,000      0,000    0,821     0,065     Died
-Weighted Avg.    0,614    0,163    0,642      0,614    0,606      0,452    0,820     0,662     
+                 Precision  Recall   F-Measure  Class
+                 0,403      0,716    0,515      Return_to_owner
+                 0,507      0,044    0,081      Euthanasia
+                 0,692      0,677    0,684      Adoption
+                 0,742      0,594    0,660      Transfer
+                 0,000      0,000    0,000      Died
+Weighted Avg.    0,642      0,613    0,605      
 
 === Confusion Matrix ===
 
     a    b    c    d    e   <-- classified as
- 3423   11 1114  238    0 |    a = Return_to_owner
-  543   69  121  822    0 |    b = Euthanasia
- 2745    2 7304  718    0 |    c = Adoption
- 1766   55 1997 5604    0 |    d = Transfer
+ 3427   10 1111  238    0 |    a = Return_to_owner
+  544   68  122  821    0 |    b = Euthanasia
+ 2756    2 7290  721    0 |    c = Adoption
+ 1770   53 1999 5600    0 |    d = Transfer
    16    1   15  165    0 |    e = Died
 

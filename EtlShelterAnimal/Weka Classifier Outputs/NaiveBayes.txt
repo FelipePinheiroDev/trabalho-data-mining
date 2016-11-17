@@ -3,12 +3,11 @@
 Scheme:       weka.classifiers.bayes.NaiveBayes 
 Relation:     train
 Instances:    26729
-Attributes:   13
+Attributes:   12
               HasName
               DayPeriod
               WeekDay
               Month
-              IsHoliday
               Season
               AnimalType
               Sex
@@ -62,11 +61,6 @@ Month
   September                  311.0           107.0           781.0           797.0            13.0
   August                     299.0           112.0           956.0           792.0            18.0
   [total]                   4798.0          1567.0         10781.0          9434.0           209.0
-
-IsHoliday
-  No                        4233.0          1358.0          9257.0          8233.0           177.0
-  Yes                        555.0           199.0          1514.0          1191.0            22.0
-  [total]                   4788.0          1557.0         10771.0          9424.0           199.0
 
 Season
   Winter                    1256.0           335.0          2436.0          1649.0            34.0
@@ -127,31 +121,26 @@ Time taken to build model: 0.03 seconds
 === Stratified cross-validation ===
 === Summary ===
 
-Correctly Classified Instances       16433               61.48   %
-Incorrectly Classified Instances     10296               38.52   %
-Kappa statistic                          0.4198
-Mean absolute error                      0.1876
-Root mean squared error                  0.3304
-Relative absolute error                 69.1834 %
-Root relative squared error             89.7202 %
+Correctly Classified Instances       16444               61.5212 %
+Incorrectly Classified Instances     10285               38.4788 %
 Total Number of Instances            26729     
 
 === Detailed Accuracy By Class ===
 
-                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0,491    0,135    0,442      0,491    0,465      0,341    0,809     0,440     Return_to_owner
-                 0,129    0,012    0,396      0,129    0,194      0,200    0,769     0,235     Euthanasia
-                 0,747    0,282    0,641      0,747    0,690      0,457    0,812     0,700     Adoption
-                 0,620    0,146    0,698      0,620    0,657      0,488    0,782     0,713     Transfer
-                 0,000    0,000    0,000      0,000    0,000      0,000    0,797     0,031     Died
-Weighted Avg.    0,615    0,190    0,607      0,615    0,604      0,429    0,798     0,626     
+                 Precision  Recall   F-Measure  Class
+                 0,444      0,489    0,466      Return_to_owner
+                 0,398      0,129    0,194      Euthanasia
+                 0,640      0,749    0,691      Adoption
+                 0,699      0,619    0,656      Transfer
+                 0,000      0,000    0,000      Died
+Weighted Avg.    0,607      0,615    0,604      
 
 === Confusion Matrix ===
 
     a    b    c    d    e   <-- classified as
- 2350   65 1997  374    0 |    a = Return_to_owner
-  402  200  177  776    0 |    b = Euthanasia
- 1406  109 8046 1208    0 |    c = Adoption
- 1152  123 2310 5837    0 |    d = Transfer
-   12    8   15  162    0 |    e = Died
+ 2342   65 2009  370    0 |    a = Return_to_owner
+  401  200  177  777    0 |    b = Euthanasia
+ 1385  106 8071 1207    0 |    c = Adoption
+ 1135  124 2332 5831    0 |    d = Transfer
+   13    8   15  161    0 |    e = Died
 
