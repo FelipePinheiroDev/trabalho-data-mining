@@ -3,7 +3,7 @@
 Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
 Relation:     train
 Instances:    26729
-Attributes:   15
+Attributes:   13
               HasName
               DayPeriod
               WeekDay
@@ -14,10 +14,8 @@ Attributes:   15
               Sex
               Castrated
               DaysuponOutcome
-              IsMix
               BreedGroup
               IsPopularBreed
-              IsSingleColor
               OutcomeType
 Test mode:    10-fold cross-validation
 
@@ -31,293 +29,101 @@ Castrated = Yes
 |   DaysuponOutcome > 240
 |   |   HasName = Yes
 |   |   |   AnimalType = Dog
-|   |   |   |   DaysuponOutcome <= 730
-|   |   |   |   |   DayPeriod = Afternoon: Adoption (3595.0/1626.0)
-|   |   |   |   |   DayPeriod = Morning
-|   |   |   |   |   |   BreedGroup = Herding: Adoption (166.0/80.0)
-|   |   |   |   |   |   BreedGroup = Group 4: Adoption (0.0)
-|   |   |   |   |   |   BreedGroup = Pit Bull
-|   |   |   |   |   |   |   Sex = Male
-|   |   |   |   |   |   |   |   Month = February
-|   |   |   |   |   |   |   |   |   WeekDay = Wed: Transfer (2.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Sun: Return_to_owner (3.0/2.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Sat: Adoption (0.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Fri: Adoption (0.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Thu: Adoption (0.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Tue: Adoption (2.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Mon: Adoption (0.0)
-|   |   |   |   |   |   |   |   Month = October: Adoption (10.0/6.0)
-|   |   |   |   |   |   |   |   Month = January: Return_to_owner (10.0/4.0)
-|   |   |   |   |   |   |   |   Month = July: Transfer (7.0/3.0)
-|   |   |   |   |   |   |   |   Month = November
-|   |   |   |   |   |   |   |   |   IsHoliday = No: Euthanasia (4.0/2.0)
-|   |   |   |   |   |   |   |   |   IsHoliday = Yes: Transfer (5.0/1.0)
-|   |   |   |   |   |   |   |   Month = April: Transfer (6.0/3.0)
-|   |   |   |   |   |   |   |   Month = March: Transfer (4.0/2.0)
-|   |   |   |   |   |   |   |   Month = May
-|   |   |   |   |   |   |   |   |   IsSingleColor = No: Adoption (3.0/1.0)
-|   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Return_to_owner (2.0/1.0)
-|   |   |   |   |   |   |   |   Month = December
-|   |   |   |   |   |   |   |   |   WeekDay = Wed: Adoption (1.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Sun: Return_to_owner (2.0/1.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Sat: Adoption (3.0/1.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Fri: Transfer (2.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Thu: Euthanasia (2.0/1.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Tue: Return_to_owner (1.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Mon: Transfer (4.0/2.0)
-|   |   |   |   |   |   |   |   Month = June: Euthanasia (3.0/2.0)
-|   |   |   |   |   |   |   |   Month = September: Transfer (6.0/1.0)
-|   |   |   |   |   |   |   |   Month = August
-|   |   |   |   |   |   |   |   |   DaysuponOutcome <= 365: Return_to_owner (4.0/1.0)
-|   |   |   |   |   |   |   |   |   DaysuponOutcome > 365: Adoption (2.0)
-|   |   |   |   |   |   |   Sex = Female: Adoption (77.0/45.0)
-|   |   |   |   |   |   |   Sex = Unknown: Adoption (0.0)
-|   |   |   |   |   |   BreedGroup = Non-Sporting
-|   |   |   |   |   |   |   WeekDay = Wed: Adoption (8.0/3.0)
-|   |   |   |   |   |   |   WeekDay = Sun: Transfer (5.0/2.0)
-|   |   |   |   |   |   |   WeekDay = Sat: Adoption (11.0/6.0)
-|   |   |   |   |   |   |   WeekDay = Fri: Return_to_owner (4.0/1.0)
-|   |   |   |   |   |   |   WeekDay = Thu: Euthanasia (3.0/2.0)
-|   |   |   |   |   |   |   WeekDay = Tue: Return_to_owner (4.0/2.0)
-|   |   |   |   |   |   |   WeekDay = Mon: Transfer (5.0/2.0)
-|   |   |   |   |   |   BreedGroup = Terrier
-|   |   |   |   |   |   |   WeekDay = Wed
-|   |   |   |   |   |   |   |   IsSingleColor = No: Return_to_owner (5.0/3.0)
-|   |   |   |   |   |   |   |   IsSingleColor = Yes: Adoption (2.0)
-|   |   |   |   |   |   |   WeekDay = Sun
-|   |   |   |   |   |   |   |   IsSingleColor = No: Adoption (8.0/3.0)
-|   |   |   |   |   |   |   |   IsSingleColor = Yes
-|   |   |   |   |   |   |   |   |   Season = Winter: Return_to_owner (0.0)
-|   |   |   |   |   |   |   |   |   Season = Fall
-|   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 365: Transfer (3.0)
-|   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 365: Return_to_owner (4.0/1.0)
-|   |   |   |   |   |   |   |   |   Season = Summer: Return_to_owner (1.0)
-|   |   |   |   |   |   |   |   |   Season = Spring: Adoption (2.0)
-|   |   |   |   |   |   |   WeekDay = Sat
-|   |   |   |   |   |   |   |   IsSingleColor = No: Adoption (5.0/1.0)
-|   |   |   |   |   |   |   |   IsSingleColor = Yes: Return_to_owner (4.0/1.0)
-|   |   |   |   |   |   |   WeekDay = Fri: Return_to_owner (7.0/3.0)
-|   |   |   |   |   |   |   WeekDay = Thu
-|   |   |   |   |   |   |   |   DaysuponOutcome <= 365: Adoption (3.0/1.0)
-|   |   |   |   |   |   |   |   DaysuponOutcome > 365: Return_to_owner (6.0/1.0)
-|   |   |   |   |   |   |   WeekDay = Tue: Adoption (10.0/3.0)
-|   |   |   |   |   |   |   WeekDay = Mon
-|   |   |   |   |   |   |   |   Sex = Male: Return_to_owner (7.0/3.0)
-|   |   |   |   |   |   |   |   Sex = Female: Adoption (6.0/3.0)
-|   |   |   |   |   |   |   |   Sex = Unknown: Transfer (0.0)
-|   |   |   |   |   |   BreedGroup = Toy
-|   |   |   |   |   |   |   Month = February
-|   |   |   |   |   |   |   |   IsPopularBreed = No: Transfer (8.0/3.0)
-|   |   |   |   |   |   |   |   IsPopularBreed = Yes: Return_to_owner (3.0/1.0)
-|   |   |   |   |   |   |   Month = October: Adoption (19.0/9.0)
-|   |   |   |   |   |   |   Month = January: Adoption (16.0/8.0)
-|   |   |   |   |   |   |   Month = July: Adoption (9.0/3.0)
-|   |   |   |   |   |   |   Month = November
-|   |   |   |   |   |   |   |   IsPopularBreed = No: Transfer (13.0/4.0)
-|   |   |   |   |   |   |   |   IsPopularBreed = Yes: Return_to_owner (3.0)
-|   |   |   |   |   |   |   Month = April
-|   |   |   |   |   |   |   |   DaysuponOutcome <= 365: Adoption (4.0/1.0)
-|   |   |   |   |   |   |   |   DaysuponOutcome > 365
-|   |   |   |   |   |   |   |   |   IsSingleColor = No: Adoption (5.0/2.0)
-|   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Return_to_owner (4.0)
-|   |   |   |   |   |   |   Month = March: Adoption (9.0/3.0)
-|   |   |   |   |   |   |   Month = May: Adoption (15.0/8.0)
-|   |   |   |   |   |   |   Month = December: Adoption (21.0/10.0)
-|   |   |   |   |   |   |   Month = June: Transfer (16.0/7.0)
-|   |   |   |   |   |   |   Month = September
-|   |   |   |   |   |   |   |   WeekDay = Wed: Return_to_owner (2.0/1.0)
-|   |   |   |   |   |   |   |   WeekDay = Sun: Adoption (3.0)
-|   |   |   |   |   |   |   |   WeekDay = Sat: Adoption (0.0)
-|   |   |   |   |   |   |   |   WeekDay = Fri: Return_to_owner (1.0)
-|   |   |   |   |   |   |   |   WeekDay = Thu: Adoption (0.0)
-|   |   |   |   |   |   |   |   WeekDay = Tue: Adoption (1.0)
-|   |   |   |   |   |   |   |   WeekDay = Mon: Return_to_owner (1.0)
-|   |   |   |   |   |   |   Month = August: Adoption (12.0/1.0)
-|   |   |   |   |   |   BreedGroup = Working
-|   |   |   |   |   |   |   DaysuponOutcome <= 365: Adoption (34.0/18.0)
-|   |   |   |   |   |   |   DaysuponOutcome > 365: Return_to_owner (26.0/10.0)
-|   |   |   |   |   |   BreedGroup = Group 2: Adoption (0.0)
-|   |   |   |   |   |   BreedGroup = Unknown: Adoption (17.0/10.0)
-|   |   |   |   |   |   BreedGroup = Hound
-|   |   |   |   |   |   |   Month = February: Return_to_owner (12.0/4.0)
-|   |   |   |   |   |   |   Month = October
-|   |   |   |   |   |   |   |   DaysuponOutcome <= 365: Adoption (2.0)
-|   |   |   |   |   |   |   |   DaysuponOutcome > 365: Return_to_owner (2.0/1.0)
-|   |   |   |   |   |   |   Month = January
-|   |   |   |   |   |   |   |   DaysuponOutcome <= 365: Adoption (2.0)
-|   |   |   |   |   |   |   |   DaysuponOutcome > 365: Transfer (3.0)
-|   |   |   |   |   |   |   Month = July: Adoption (11.0/4.0)
-|   |   |   |   |   |   |   Month = November
-|   |   |   |   |   |   |   |   WeekDay = Wed: Transfer (1.0)
-|   |   |   |   |   |   |   |   WeekDay = Sun: Return_to_owner (2.0)
-|   |   |   |   |   |   |   |   WeekDay = Sat: Euthanasia (1.0)
-|   |   |   |   |   |   |   |   WeekDay = Fri: Transfer (3.0/1.0)
-|   |   |   |   |   |   |   |   WeekDay = Thu: Transfer (2.0)
-|   |   |   |   |   |   |   |   WeekDay = Tue: Transfer (0.0)
-|   |   |   |   |   |   |   |   WeekDay = Mon: Return_to_owner (2.0)
-|   |   |   |   |   |   |   Month = April: Return_to_owner (6.0/3.0)
-|   |   |   |   |   |   |   Month = March: Transfer (3.0/1.0)
-|   |   |   |   |   |   |   Month = May: Adoption (4.0/1.0)
-|   |   |   |   |   |   |   Month = December: Adoption (11.0/5.0)
-|   |   |   |   |   |   |   Month = June: Return_to_owner (2.0/1.0)
-|   |   |   |   |   |   |   Month = September: Return_to_owner (3.0/2.0)
-|   |   |   |   |   |   |   Month = August: Return_to_owner (4.0/1.0)
-|   |   |   |   |   |   BreedGroup = Group 3: Adoption (0.0)
-|   |   |   |   |   |   BreedGroup = Sporting: Adoption (121.0/66.0)
-|   |   |   |   |   |   BreedGroup = Group 1: Adoption (0.0)
-|   |   |   |   |   |   BreedGroup = Terrier&Toy: Adoption (6.0)
-|   |   |   |   |   DayPeriod = Evening
-|   |   |   |   |   |   Month = February: Transfer (27.0/9.0)
-|   |   |   |   |   |   Month = October: Adoption (36.0/10.0)
-|   |   |   |   |   |   Month = January
-|   |   |   |   |   |   |   Sex = Male
-|   |   |   |   |   |   |   |   BreedGroup = Herding: Return_to_owner (2.0/1.0)
-|   |   |   |   |   |   |   |   BreedGroup = Group 4: Adoption (0.0)
-|   |   |   |   |   |   |   |   BreedGroup = Pit Bull: Return_to_owner (1.0)
-|   |   |   |   |   |   |   |   BreedGroup = Non-Sporting: Adoption (0.0)
-|   |   |   |   |   |   |   |   BreedGroup = Terrier: Adoption (0.0)
-|   |   |   |   |   |   |   |   BreedGroup = Toy
-|   |   |   |   |   |   |   |   |   IsSingleColor = No: Adoption (4.0)
-|   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Return_to_owner (2.0/1.0)
-|   |   |   |   |   |   |   |   BreedGroup = Working
-|   |   |   |   |   |   |   |   |   IsPopularBreed = No: Adoption (2.0)
-|   |   |   |   |   |   |   |   |   IsPopularBreed = Yes: Return_to_owner (2.0)
-|   |   |   |   |   |   |   |   BreedGroup = Group 2: Adoption (0.0)
-|   |   |   |   |   |   |   |   BreedGroup = Unknown: Adoption (0.0)
-|   |   |   |   |   |   |   |   BreedGroup = Hound: Transfer (3.0)
-|   |   |   |   |   |   |   |   BreedGroup = Group 3: Adoption (0.0)
-|   |   |   |   |   |   |   |   BreedGroup = Sporting: Transfer (3.0)
-|   |   |   |   |   |   |   |   BreedGroup = Group 1: Adoption (0.0)
-|   |   |   |   |   |   |   |   BreedGroup = Terrier&Toy: Adoption (0.0)
-|   |   |   |   |   |   |   Sex = Female: Adoption (14.0/4.0)
-|   |   |   |   |   |   |   Sex = Unknown: Adoption (0.0)
-|   |   |   |   |   |   Month = July
-|   |   |   |   |   |   |   DaysuponOutcome <= 365: Adoption (6.0/1.0)
-|   |   |   |   |   |   |   DaysuponOutcome > 365: Return_to_owner (6.0/2.0)
-|   |   |   |   |   |   Month = November
-|   |   |   |   |   |   |   WeekDay = Wed: Return_to_owner (3.0/1.0)
-|   |   |   |   |   |   |   WeekDay = Sun
-|   |   |   |   |   |   |   |   IsPopularBreed = No: Transfer (3.0/1.0)
-|   |   |   |   |   |   |   |   IsPopularBreed = Yes: Adoption (3.0)
-|   |   |   |   |   |   |   WeekDay = Sat: Adoption (4.0/2.0)
-|   |   |   |   |   |   |   WeekDay = Fri: Return_to_owner (2.0)
-|   |   |   |   |   |   |   WeekDay = Thu: Return_to_owner (1.0)
-|   |   |   |   |   |   |   WeekDay = Tue: Return_to_owner (5.0/3.0)
-|   |   |   |   |   |   |   WeekDay = Mon: Transfer (8.0/1.0)
-|   |   |   |   |   |   Month = April: Adoption (12.0/6.0)
-|   |   |   |   |   |   Month = March: Adoption (11.0)
-|   |   |   |   |   |   Month = May: Adoption (30.0/8.0)
-|   |   |   |   |   |   Month = December: Adoption (22.0/8.0)
-|   |   |   |   |   |   Month = June: Adoption (18.0/4.0)
-|   |   |   |   |   |   Month = September
-|   |   |   |   |   |   |   IsHoliday = No
-|   |   |   |   |   |   |   |   Sex = Male: Adoption (9.0/1.0)
-|   |   |   |   |   |   |   |   Sex = Female: Return_to_owner (4.0/1.0)
-|   |   |   |   |   |   |   |   Sex = Unknown: Adoption (0.0)
-|   |   |   |   |   |   |   IsHoliday = Yes: Transfer (2.0)
-|   |   |   |   |   |   Month = August: Adoption (19.0/7.0)
+|   |   |   |   DaysuponOutcome <= 730: Adoption (4748.0/2243.0)
 |   |   |   |   DaysuponOutcome > 730
 |   |   |   |   |   DaysuponOutcome <= 3650
 |   |   |   |   |   |   BreedGroup = Herding
-|   |   |   |   |   |   |   DaysuponOutcome <= 2190
-|   |   |   |   |   |   |   |   DayPeriod = Afternoon
-|   |   |   |   |   |   |   |   |   Month = February
-|   |   |   |   |   |   |   |   |   |   WeekDay = Wed: Adoption (1.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Sun: Return_to_owner (7.0/2.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Sat: Adoption (6.0/1.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Fri: Adoption (2.0/1.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Thu: Return_to_owner (3.0/2.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Tue: Return_to_owner (2.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Mon: Adoption (3.0)
-|   |   |   |   |   |   |   |   |   Month = October: Adoption (40.0/21.0)
-|   |   |   |   |   |   |   |   |   Month = January: Adoption (36.0/17.0)
-|   |   |   |   |   |   |   |   |   Month = July: Adoption (21.0/9.0)
-|   |   |   |   |   |   |   |   |   Month = November
-|   |   |   |   |   |   |   |   |   |   WeekDay = Wed: Adoption (5.0/2.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Sun: Return_to_owner (3.0/2.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Sat: Adoption (7.0/2.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Fri: Return_to_owner (11.0/4.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Thu: Return_to_owner (2.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Tue
-|   |   |   |   |   |   |   |   |   |   |   IsSingleColor = No: Return_to_owner (3.0/1.0)
-|   |   |   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Adoption (2.0/1.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Mon: Return_to_owner (3.0/2.0)
-|   |   |   |   |   |   |   |   |   Month = April: Return_to_owner (25.0/11.0)
-|   |   |   |   |   |   |   |   |   Month = March
-|   |   |   |   |   |   |   |   |   |   IsSingleColor = No: Return_to_owner (21.0/11.0)
-|   |   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Adoption (4.0/1.0)
-|   |   |   |   |   |   |   |   |   Month = May: Return_to_owner (21.0/9.0)
-|   |   |   |   |   |   |   |   |   Month = December
-|   |   |   |   |   |   |   |   |   |   WeekDay = Wed: Return_to_owner (6.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Sun: Return_to_owner (5.0/2.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Sat: Adoption (8.0/1.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Fri
-|   |   |   |   |   |   |   |   |   |   |   Sex = Male: Return_to_owner (2.0/1.0)
-|   |   |   |   |   |   |   |   |   |   |   Sex = Female: Transfer (3.0/1.0)
-|   |   |   |   |   |   |   |   |   |   |   Sex = Unknown: Return_to_owner (0.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Thu: Return_to_owner (3.0/2.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Tue
-|   |   |   |   |   |   |   |   |   |   |   IsMix = Yes: Return_to_owner (6.0/2.0)
-|   |   |   |   |   |   |   |   |   |   |   IsMix = No: Adoption (2.0/1.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Mon: Return_to_owner (4.0/1.0)
-|   |   |   |   |   |   |   |   |   Month = June: Adoption (20.0/9.0)
-|   |   |   |   |   |   |   |   |   Month = September
-|   |   |   |   |   |   |   |   |   |   Sex = Male: Adoption (12.0/5.0)
-|   |   |   |   |   |   |   |   |   |   Sex = Female: Return_to_owner (8.0/4.0)
-|   |   |   |   |   |   |   |   |   |   Sex = Unknown: Return_to_owner (0.0)
-|   |   |   |   |   |   |   |   |   Month = August
-|   |   |   |   |   |   |   |   |   |   IsPopularBreed = No
-|   |   |   |   |   |   |   |   |   |   |   Sex = Male: Transfer (6.0/3.0)
-|   |   |   |   |   |   |   |   |   |   |   Sex = Female: Adoption (2.0)
-|   |   |   |   |   |   |   |   |   |   |   Sex = Unknown: Adoption (0.0)
-|   |   |   |   |   |   |   |   |   |   IsPopularBreed = Yes
-|   |   |   |   |   |   |   |   |   |   |   IsSingleColor = No: Return_to_owner (5.0/1.0)
-|   |   |   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Adoption (2.0)
-|   |   |   |   |   |   |   |   DayPeriod = Morning
-|   |   |   |   |   |   |   |   |   Month = February: Adoption (9.0/4.0)
-|   |   |   |   |   |   |   |   |   Month = October: Return_to_owner (12.0/6.0)
-|   |   |   |   |   |   |   |   |   Month = January: Adoption (7.0/4.0)
-|   |   |   |   |   |   |   |   |   Month = July: Return_to_owner (4.0/2.0)
-|   |   |   |   |   |   |   |   |   Month = November
-|   |   |   |   |   |   |   |   |   |   IsPopularBreed = No
-|   |   |   |   |   |   |   |   |   |   |   Sex = Male: Return_to_owner (2.0)
-|   |   |   |   |   |   |   |   |   |   |   Sex = Female: Adoption (3.0/1.0)
-|   |   |   |   |   |   |   |   |   |   |   Sex = Unknown: Return_to_owner (0.0)
-|   |   |   |   |   |   |   |   |   |   IsPopularBreed = Yes: Adoption (3.0)
-|   |   |   |   |   |   |   |   |   Month = April: Return_to_owner (5.0/3.0)
-|   |   |   |   |   |   |   |   |   Month = March
-|   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1460: Transfer (3.0/1.0)
-|   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1460: Return_to_owner (4.0)
-|   |   |   |   |   |   |   |   |   Month = May
-|   |   |   |   |   |   |   |   |   |   WeekDay = Wed: Transfer (3.0/1.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Sun: Return_to_owner (2.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Sat: Return_to_owner (1.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Fri: Return_to_owner (2.0/1.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Thu: Return_to_owner (0.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Tue: Adoption (2.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Mon: Adoption (1.0)
-|   |   |   |   |   |   |   |   |   Month = December
-|   |   |   |   |   |   |   |   |   |   IsPopularBreed = No
-|   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1095: Return_to_owner (2.0)
-|   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1095: Adoption (4.0)
-|   |   |   |   |   |   |   |   |   |   IsPopularBreed = Yes: Return_to_owner (3.0)
-|   |   |   |   |   |   |   |   |   Month = June: Return_to_owner (8.0/5.0)
-|   |   |   |   |   |   |   |   |   Month = September: Adoption (3.0/1.0)
-|   |   |   |   |   |   |   |   |   Month = August
-|   |   |   |   |   |   |   |   |   |   Sex = Male: Return_to_owner (4.0/1.0)
-|   |   |   |   |   |   |   |   |   |   Sex = Female: Adoption (3.0/1.0)
-|   |   |   |   |   |   |   |   |   |   Sex = Unknown: Return_to_owner (0.0)
-|   |   |   |   |   |   |   |   DayPeriod = Evening
-|   |   |   |   |   |   |   |   |   WeekDay = Wed: Return_to_owner (4.0/2.0)
+|   |   |   |   |   |   |   DayPeriod = Afternoon
+|   |   |   |   |   |   |   |   Month = February
+|   |   |   |   |   |   |   |   |   WeekDay = Wed: Adoption (1.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Sun: Return_to_owner (8.0/3.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Sat: Adoption (7.0/1.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Fri: Adoption (2.0/1.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Thu: Adoption (5.0/2.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Tue: Return_to_owner (5.0/1.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Mon
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 2190: Adoption (3.0)
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 2190: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   |   |   Month = October
+|   |   |   |   |   |   |   |   |   WeekDay = Wed
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1460: Euthanasia (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1460: Return_to_owner (2.0)
 |   |   |   |   |   |   |   |   |   WeekDay = Sun
-|   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1460: Transfer (2.0)
-|   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1460: Adoption (3.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Sat: Adoption (3.0/1.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Fri: Return_to_owner (1.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Thu: Adoption (2.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Tue: Transfer (2.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Mon: Transfer (6.0/2.0)
-|   |   |   |   |   |   |   DaysuponOutcome > 2190: Return_to_owner (155.0/76.0)
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1825: Adoption (5.0)
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1825: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Sat: Adoption (5.0/1.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Fri: Return_to_owner (4.0/2.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Thu
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1460: Euthanasia (4.0/2.0)
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1460: Adoption (4.0/1.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Tue: Return_to_owner (5.0/2.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Mon: Transfer (12.0/6.0)
+|   |   |   |   |   |   |   |   Month = January: Adoption (51.0/27.0)
+|   |   |   |   |   |   |   |   Month = July
+|   |   |   |   |   |   |   |   |   WeekDay = Wed: Adoption (3.0/1.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Sun: Adoption (6.0/2.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Sat
+|   |   |   |   |   |   |   |   |   |   Sex = Male: Return_to_owner (5.0/2.0)
+|   |   |   |   |   |   |   |   |   |   Sex = Female: Adoption (2.0)
+|   |   |   |   |   |   |   |   |   |   Sex = Unknown: Return_to_owner (0.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Fri: Transfer (5.0/2.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Thu: Return_to_owner (3.0/1.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Tue: Adoption (4.0/1.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Mon: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   |   |   Month = November
+|   |   |   |   |   |   |   |   |   WeekDay = Wed: Adoption (6.0/2.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Sun
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1460: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1460: Adoption (4.0/1.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Sat
+|   |   |   |   |   |   |   |   |   |   Sex = Male: Adoption (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Sex = Female
+|   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1825: Adoption (3.0)
+|   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1825: Return_to_owner (2.0)
+|   |   |   |   |   |   |   |   |   |   Sex = Unknown: Adoption (0.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Fri
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 2190: Return_to_owner (11.0/4.0)
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 2190: Adoption (3.0/1.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Thu: Return_to_owner (3.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Tue: Return_to_owner (6.0/3.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Mon: Return_to_owner (3.0/2.0)
+|   |   |   |   |   |   |   |   Month = April: Return_to_owner (32.0/13.0)
+|   |   |   |   |   |   |   |   Month = March: Return_to_owner (32.0/17.0)
+|   |   |   |   |   |   |   |   Month = May: Return_to_owner (30.0/11.0)
+|   |   |   |   |   |   |   |   Month = December
+|   |   |   |   |   |   |   |   |   WeekDay = Wed: Return_to_owner (7.0/1.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Sun: Return_to_owner (5.0/2.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Sat: Adoption (9.0/1.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Fri
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1460: Return_to_owner (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1460: Transfer (4.0/2.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Thu: Transfer (5.0/2.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Tue: Return_to_owner (9.0/4.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Mon: Return_to_owner (5.0/1.0)
+|   |   |   |   |   |   |   |   Month = June
+|   |   |   |   |   |   |   |   |   IsHoliday = No: Return_to_owner (21.0/9.0)
+|   |   |   |   |   |   |   |   |   IsHoliday = Yes: Adoption (4.0/1.0)
+|   |   |   |   |   |   |   |   Month = September: Adoption (26.0/14.0)
+|   |   |   |   |   |   |   |   Month = August: Adoption (22.0/11.0)
+|   |   |   |   |   |   |   DayPeriod = Morning: Return_to_owner (141.0/75.0)
+|   |   |   |   |   |   |   DayPeriod = Evening
+|   |   |   |   |   |   |   |   WeekDay = Wed
+|   |   |   |   |   |   |   |   |   Sex = Male: Return_to_owner (3.0/1.0)
+|   |   |   |   |   |   |   |   |   Sex = Female: Transfer (2.0)
+|   |   |   |   |   |   |   |   |   Sex = Unknown: Return_to_owner (0.0)
+|   |   |   |   |   |   |   |   WeekDay = Sun
+|   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1460: Transfer (2.0)
+|   |   |   |   |   |   |   |   |   DaysuponOutcome > 1460: Adoption (3.0)
+|   |   |   |   |   |   |   |   WeekDay = Sat
+|   |   |   |   |   |   |   |   |   Sex = Male: Adoption (2.0)
+|   |   |   |   |   |   |   |   |   Sex = Female: Return_to_owner (2.0)
+|   |   |   |   |   |   |   |   |   Sex = Unknown: Return_to_owner (0.0)
+|   |   |   |   |   |   |   |   WeekDay = Fri: Return_to_owner (1.0)
+|   |   |   |   |   |   |   |   WeekDay = Thu: Adoption (2.0)
+|   |   |   |   |   |   |   |   WeekDay = Tue
+|   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1825: Transfer (2.0)
+|   |   |   |   |   |   |   |   |   DaysuponOutcome > 1825: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   |   |   WeekDay = Mon: Adoption (9.0/5.0)
 |   |   |   |   |   |   BreedGroup = Group 4: Return_to_owner (0.0)
 |   |   |   |   |   |   BreedGroup = Pit Bull: Return_to_owner (547.0/308.0)
 |   |   |   |   |   |   BreedGroup = Non-Sporting: Return_to_owner (174.0/83.0)
@@ -327,15 +133,13 @@ Castrated = Yes
 |   |   |   |   |   |   |   |   IsHoliday = Yes: Adoption (2.0)
 |   |   |   |   |   |   |   WeekDay = Sun
 |   |   |   |   |   |   |   |   Month = February
-|   |   |   |   |   |   |   |   |   IsSingleColor = No: Return_to_owner (4.0/1.0)
-|   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Transfer (3.0/1.0)
+|   |   |   |   |   |   |   |   |   DayPeriod = Afternoon
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 2190: Transfer (2.0)
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 2190: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   |   |   |   DayPeriod = Morning: Return_to_owner (2.0)
+|   |   |   |   |   |   |   |   |   DayPeriod = Evening: Transfer (1.0)
 |   |   |   |   |   |   |   |   Month = October: Adoption (3.0)
-|   |   |   |   |   |   |   |   Month = January
-|   |   |   |   |   |   |   |   |   IsSingleColor = No: Adoption (7.0/2.0)
-|   |   |   |   |   |   |   |   |   IsSingleColor = Yes
-|   |   |   |   |   |   |   |   |   |   DayPeriod = Afternoon: Return_to_owner (2.0)
-|   |   |   |   |   |   |   |   |   |   DayPeriod = Morning: Adoption (2.0)
-|   |   |   |   |   |   |   |   |   |   DayPeriod = Evening: Return_to_owner (0.0)
+|   |   |   |   |   |   |   |   Month = January: Adoption (11.0/4.0)
 |   |   |   |   |   |   |   |   Month = July: Adoption (1.0)
 |   |   |   |   |   |   |   |   Month = November: Return_to_owner (3.0/1.0)
 |   |   |   |   |   |   |   |   Month = April: Return_to_owner (3.0)
@@ -346,8 +150,8 @@ Castrated = Yes
 |   |   |   |   |   |   |   |   |   DayPeriod = Morning: Return_to_owner (3.0)
 |   |   |   |   |   |   |   |   |   DayPeriod = Evening: Return_to_owner (0.0)
 |   |   |   |   |   |   |   |   Month = June
-|   |   |   |   |   |   |   |   |   IsMix = Yes: Adoption (4.0/1.0)
-|   |   |   |   |   |   |   |   |   IsMix = No: Return_to_owner (2.0)
+|   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1825: Adoption (3.0)
+|   |   |   |   |   |   |   |   |   DaysuponOutcome > 1825: Return_to_owner (3.0/1.0)
 |   |   |   |   |   |   |   |   Month = September: Return_to_owner (4.0/1.0)
 |   |   |   |   |   |   |   |   Month = August: Adoption (1.0)
 |   |   |   |   |   |   |   WeekDay = Sat: Adoption (52.0/17.0)
@@ -356,23 +160,9 @@ Castrated = Yes
 |   |   |   |   |   |   |   |   DayPeriod = Morning: Transfer (12.0/6.0)
 |   |   |   |   |   |   |   |   DayPeriod = Evening: Adoption (1.0)
 |   |   |   |   |   |   |   WeekDay = Thu
-|   |   |   |   |   |   |   |   Month = February: Return_to_owner (2.0/1.0)
-|   |   |   |   |   |   |   |   Month = October: Return_to_owner (4.0/1.0)
-|   |   |   |   |   |   |   |   Month = January: Return_to_owner (4.0/1.0)
-|   |   |   |   |   |   |   |   Month = July: Adoption (2.0)
-|   |   |   |   |   |   |   |   Month = November: Transfer (2.0)
-|   |   |   |   |   |   |   |   Month = April: Return_to_owner (2.0/1.0)
-|   |   |   |   |   |   |   |   Month = March: Return_to_owner (3.0/1.0)
-|   |   |   |   |   |   |   |   Month = May: Return_to_owner (2.0/1.0)
-|   |   |   |   |   |   |   |   Month = December
-|   |   |   |   |   |   |   |   |   IsSingleColor = No: Adoption (4.0/1.0)
-|   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Transfer (2.0)
-|   |   |   |   |   |   |   |   Month = June: Return_to_owner (3.0/2.0)
-|   |   |   |   |   |   |   |   Month = September: Adoption (1.0)
-|   |   |   |   |   |   |   |   Month = August
-|   |   |   |   |   |   |   |   |   DayPeriod = Afternoon: Adoption (2.0/1.0)
-|   |   |   |   |   |   |   |   |   DayPeriod = Morning: Return_to_owner (2.0/1.0)
-|   |   |   |   |   |   |   |   |   DayPeriod = Evening: Return_to_owner (0.0)
+|   |   |   |   |   |   |   |   DayPeriod = Afternoon: Adoption (17.0/9.0)
+|   |   |   |   |   |   |   |   DayPeriod = Morning: Return_to_owner (16.0/9.0)
+|   |   |   |   |   |   |   |   DayPeriod = Evening: Transfer (2.0)
 |   |   |   |   |   |   |   WeekDay = Tue: Return_to_owner (45.0/23.0)
 |   |   |   |   |   |   |   WeekDay = Mon
 |   |   |   |   |   |   |   |   Sex = Male: Return_to_owner (25.0/13.0)
@@ -381,13 +171,8 @@ Castrated = Yes
 |   |   |   |   |   |   BreedGroup = Toy
 |   |   |   |   |   |   |   DayPeriod = Afternoon
 |   |   |   |   |   |   |   |   Month = February
-|   |   |   |   |   |   |   |   |   Sex = Male
-|   |   |   |   |   |   |   |   |   |   IsSingleColor = No: Return_to_owner (23.0/8.0)
-|   |   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Adoption (16.0/8.0)
-|   |   |   |   |   |   |   |   |   Sex = Female
-|   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 2190: Adoption (24.0/8.0)
-|   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 2190: Return_to_owner (7.0/3.0)
-|   |   |   |   |   |   |   |   |   Sex = Unknown: Return_to_owner (0.0)
+|   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1825: Adoption (51.0/24.0)
+|   |   |   |   |   |   |   |   |   DaysuponOutcome > 1825: Return_to_owner (19.0/10.0)
 |   |   |   |   |   |   |   |   Month = October
 |   |   |   |   |   |   |   |   |   WeekDay = Wed: Return_to_owner (5.0/1.0)
 |   |   |   |   |   |   |   |   |   WeekDay = Sun: Adoption (9.0/3.0)
@@ -406,14 +191,7 @@ Castrated = Yes
 |   |   |   |   |   |   |   |   Month = January
 |   |   |   |   |   |   |   |   |   WeekDay = Wed: Return_to_owner (10.0/5.0)
 |   |   |   |   |   |   |   |   |   WeekDay = Sun: Adoption (6.0/1.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Sat
-|   |   |   |   |   |   |   |   |   |   IsSingleColor = No
-|   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1095: Return_to_owner (3.0/1.0)
-|   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1095: Adoption (7.0/2.0)
-|   |   |   |   |   |   |   |   |   |   IsSingleColor = Yes
-|   |   |   |   |   |   |   |   |   |   |   Sex = Male: Return_to_owner (3.0/1.0)
-|   |   |   |   |   |   |   |   |   |   |   Sex = Female: Adoption (3.0)
-|   |   |   |   |   |   |   |   |   |   |   Sex = Unknown: Adoption (0.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Sat: Adoption (16.0/7.0)
 |   |   |   |   |   |   |   |   |   WeekDay = Fri: Transfer (7.0/3.0)
 |   |   |   |   |   |   |   |   |   WeekDay = Thu: Return_to_owner (9.0/2.0)
 |   |   |   |   |   |   |   |   |   WeekDay = Tue
@@ -424,85 +202,63 @@ Castrated = Yes
 |   |   |   |   |   |   |   |   |   |   Sex = Female: Return_to_owner (2.0/1.0)
 |   |   |   |   |   |   |   |   |   |   Sex = Unknown: Adoption (0.0)
 |   |   |   |   |   |   |   |   Month = July
-|   |   |   |   |   |   |   |   |   IsPopularBreed = No
-|   |   |   |   |   |   |   |   |   |   WeekDay = Wed
-|   |   |   |   |   |   |   |   |   |   |   IsSingleColor = No: Transfer (7.0/2.0)
-|   |   |   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Return_to_owner (4.0/2.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Sun
-|   |   |   |   |   |   |   |   |   |   |   IsSingleColor = No: Adoption (3.0/1.0)
-|   |   |   |   |   |   |   |   |   |   |   IsSingleColor = Yes
-|   |   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1095: Return_to_owner (2.0)
-|   |   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1095: Adoption (3.0/1.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Sat
-|   |   |   |   |   |   |   |   |   |   |   Sex = Male: Return_to_owner (3.0)
-|   |   |   |   |   |   |   |   |   |   |   Sex = Female: Adoption (6.0/2.0)
-|   |   |   |   |   |   |   |   |   |   |   Sex = Unknown: Return_to_owner (0.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Fri
-|   |   |   |   |   |   |   |   |   |   |   Sex = Male
-|   |   |   |   |   |   |   |   |   |   |   |   IsSingleColor = No: Return_to_owner (4.0/1.0)
-|   |   |   |   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Adoption (2.0)
-|   |   |   |   |   |   |   |   |   |   |   Sex = Female: Adoption (3.0)
-|   |   |   |   |   |   |   |   |   |   |   Sex = Unknown: Adoption (0.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Thu
-|   |   |   |   |   |   |   |   |   |   |   IsMix = Yes: Adoption (5.0/2.0)
-|   |   |   |   |   |   |   |   |   |   |   IsMix = No: Return_to_owner (2.0/1.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Tue: Return_to_owner (4.0/1.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Mon: Return_to_owner (6.0/2.0)
-|   |   |   |   |   |   |   |   |   IsPopularBreed = Yes: Return_to_owner (12.0/3.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Wed
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1095: Adoption (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1095: Transfer (9.0/4.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Sun: Return_to_owner (10.0/4.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Sat: Return_to_owner (10.0/4.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Fri
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1825: Adoption (8.0/2.0)
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1825: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Thu
+|   |   |   |   |   |   |   |   |   |   IsPopularBreed = No
+|   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1825: Adoption (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1825: Return_to_owner (4.0/2.0)
+|   |   |   |   |   |   |   |   |   |   IsPopularBreed = Yes: Return_to_owner (4.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Tue
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1460: Adoption (2.0)
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1460: Return_to_owner (5.0/1.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Mon: Return_to_owner (6.0/2.0)
 |   |   |   |   |   |   |   |   Month = November
-|   |   |   |   |   |   |   |   |   IsMix = Yes
-|   |   |   |   |   |   |   |   |   |   WeekDay = Wed: Adoption (3.0/1.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Sun
-|   |   |   |   |   |   |   |   |   |   |   IsSingleColor = No
-|   |   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1825: Adoption (7.0/2.0)
-|   |   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1825: Return_to_owner (2.0/1.0)
-|   |   |   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Return_to_owner (6.0/1.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Sat
-|   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1825: Adoption (5.0/2.0)
-|   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1825: Return_to_owner (2.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Fri
-|   |   |   |   |   |   |   |   |   |   |   IsHoliday = No
-|   |   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1825: Return_to_owner (2.0)
-|   |   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1825: Adoption (5.0/2.0)
-|   |   |   |   |   |   |   |   |   |   |   IsHoliday = Yes: Adoption (2.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Thu
-|   |   |   |   |   |   |   |   |   |   |   IsHoliday = No: Return_to_owner (2.0)
-|   |   |   |   |   |   |   |   |   |   |   IsHoliday = Yes: Transfer (3.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Tue: Return_to_owner (4.0/1.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Mon: Return_to_owner (5.0/1.0)
-|   |   |   |   |   |   |   |   |   IsMix = No: Transfer (2.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Wed: Adoption (4.0/2.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Sun
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1460: Adoption (10.0/4.0)
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1460: Return_to_owner (5.0/1.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Sat
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1825
+|   |   |   |   |   |   |   |   |   |   |   Sex = Male: Transfer (4.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   Sex = Female: Adoption (2.0)
+|   |   |   |   |   |   |   |   |   |   |   Sex = Unknown: Adoption (0.0)
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1825: Return_to_owner (2.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Fri
+|   |   |   |   |   |   |   |   |   |   IsHoliday = No
+|   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1825: Return_to_owner (2.0)
+|   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1825: Adoption (5.0/2.0)
+|   |   |   |   |   |   |   |   |   |   IsHoliday = Yes: Adoption (2.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Thu
+|   |   |   |   |   |   |   |   |   |   IsHoliday = No: Return_to_owner (2.0)
+|   |   |   |   |   |   |   |   |   |   IsHoliday = Yes: Transfer (3.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Tue: Return_to_owner (4.0/1.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Mon: Return_to_owner (5.0/1.0)
 |   |   |   |   |   |   |   |   Month = April: Return_to_owner (59.0/27.0)
 |   |   |   |   |   |   |   |   Month = March
 |   |   |   |   |   |   |   |   |   Sex = Male: Return_to_owner (28.0/15.0)
-|   |   |   |   |   |   |   |   |   Sex = Female
-|   |   |   |   |   |   |   |   |   |   IsMix = Yes
-|   |   |   |   |   |   |   |   |   |   |   WeekDay = Wed: Adoption (5.0/1.0)
-|   |   |   |   |   |   |   |   |   |   |   WeekDay = Sun
-|   |   |   |   |   |   |   |   |   |   |   |   IsPopularBreed = No
-|   |   |   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 2555: Transfer (2.0)
-|   |   |   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 2555: Adoption (2.0)
-|   |   |   |   |   |   |   |   |   |   |   |   IsPopularBreed = Yes: Return_to_owner (2.0/1.0)
-|   |   |   |   |   |   |   |   |   |   |   WeekDay = Sat: Adoption (1.0)
-|   |   |   |   |   |   |   |   |   |   |   WeekDay = Fri
-|   |   |   |   |   |   |   |   |   |   |   |   IsPopularBreed = No: Return_to_owner (4.0/1.0)
-|   |   |   |   |   |   |   |   |   |   |   |   IsPopularBreed = Yes: Transfer (2.0)
-|   |   |   |   |   |   |   |   |   |   |   WeekDay = Thu: Transfer (4.0/1.0)
-|   |   |   |   |   |   |   |   |   |   |   WeekDay = Tue
-|   |   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1095: Adoption (2.0/1.0)
-|   |   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1095: Return_to_owner (3.0/1.0)
-|   |   |   |   |   |   |   |   |   |   |   WeekDay = Mon: Return_to_owner (1.0)
-|   |   |   |   |   |   |   |   |   |   IsMix = No: Adoption (5.0)
+|   |   |   |   |   |   |   |   |   Sex = Female: Adoption (33.0/16.0)
 |   |   |   |   |   |   |   |   |   Sex = Unknown: Adoption (0.0)
 |   |   |   |   |   |   |   |   Month = May
 |   |   |   |   |   |   |   |   |   WeekDay = Wed
-|   |   |   |   |   |   |   |   |   |   IsSingleColor = No: Adoption (8.0/4.0)
-|   |   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Return_to_owner (2.0)
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1460: Return_to_owner (5.0/2.0)
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1460
+|   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 3285: Transfer (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 3285: Return_to_owner (2.0/1.0)
 |   |   |   |   |   |   |   |   |   WeekDay = Sun
 |   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1825: Return_to_owner (4.0)
 |   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1825: Transfer (3.0)
 |   |   |   |   |   |   |   |   |   WeekDay = Sat
-|   |   |   |   |   |   |   |   |   |   IsSingleColor = No: Return_to_owner (8.0/1.0)
-|   |   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Adoption (5.0)
+|   |   |   |   |   |   |   |   |   |   IsPopularBreed = No
+|   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1460: Adoption (6.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1460: Return_to_owner (5.0)
+|   |   |   |   |   |   |   |   |   |   IsPopularBreed = Yes: Adoption (2.0)
 |   |   |   |   |   |   |   |   |   WeekDay = Fri
 |   |   |   |   |   |   |   |   |   |   IsPopularBreed = No
 |   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1460: Return_to_owner (7.0/2.0)
@@ -521,11 +277,7 @@ Castrated = Yes
 |   |   |   |   |   |   |   |   Month = December
 |   |   |   |   |   |   |   |   |   IsPopularBreed = No
 |   |   |   |   |   |   |   |   |   |   WeekDay = Wed: Adoption (3.0/1.0)
-|   |   |   |   |   |   |   |   |   |   WeekDay = Sun
-|   |   |   |   |   |   |   |   |   |   |   IsSingleColor = No
-|   |   |   |   |   |   |   |   |   |   |   |   IsHoliday = No: Return_to_owner (2.0)
-|   |   |   |   |   |   |   |   |   |   |   |   IsHoliday = Yes: Adoption (3.0/1.0)
-|   |   |   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Adoption (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   WeekDay = Sun: Adoption (11.0/4.0)
 |   |   |   |   |   |   |   |   |   |   WeekDay = Sat
 |   |   |   |   |   |   |   |   |   |   |   Sex = Male
 |   |   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1460: Transfer (2.0)
@@ -537,10 +289,10 @@ Castrated = Yes
 |   |   |   |   |   |   |   |   |   |   |   IsHoliday = Yes: Transfer (6.0/2.0)
 |   |   |   |   |   |   |   |   |   |   WeekDay = Thu: Return_to_owner (5.0/2.0)
 |   |   |   |   |   |   |   |   |   |   WeekDay = Tue
-|   |   |   |   |   |   |   |   |   |   |   IsSingleColor = No
-|   |   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1460: Transfer (3.0/1.0)
-|   |   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1460: Adoption (3.0)
-|   |   |   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Return_to_owner (3.0)
+|   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1460: Transfer (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1460
+|   |   |   |   |   |   |   |   |   |   |   |   IsHoliday = No: Adoption (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   IsHoliday = Yes: Return_to_owner (3.0/1.0)
 |   |   |   |   |   |   |   |   |   |   WeekDay = Mon: Return_to_owner (9.0/4.0)
 |   |   |   |   |   |   |   |   |   IsPopularBreed = Yes: Return_to_owner (14.0/3.0)
 |   |   |   |   |   |   |   |   Month = June
@@ -572,67 +324,12 @@ Castrated = Yes
 |   |   |   |   |   |   |   |   |   |   |   Sex = Female: Transfer (3.0/1.0)
 |   |   |   |   |   |   |   |   |   |   |   Sex = Unknown: Return_to_owner (0.0)
 |   |   |   |   |   |   |   |   |   WeekDay = Mon: Adoption (8.0/2.0)
-|   |   |   |   |   |   |   DayPeriod = Morning
-|   |   |   |   |   |   |   |   Month = February: Return_to_owner (11.0/4.0)
-|   |   |   |   |   |   |   |   Month = October: Adoption (23.0/12.0)
-|   |   |   |   |   |   |   |   Month = January
-|   |   |   |   |   |   |   |   |   WeekDay = Wed: Adoption (3.0/1.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Sun: Adoption (3.0/1.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Sat: Return_to_owner (3.0/1.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Fri: Return_to_owner (2.0/1.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Thu: Return_to_owner (3.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Tue
-|   |   |   |   |   |   |   |   |   |   Sex = Male: Transfer (2.0)
-|   |   |   |   |   |   |   |   |   |   Sex = Female: Adoption (2.0)
-|   |   |   |   |   |   |   |   |   |   Sex = Unknown: Adoption (0.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Mon
-|   |   |   |   |   |   |   |   |   |   Sex = Male: Adoption (2.0)
-|   |   |   |   |   |   |   |   |   |   Sex = Female: Return_to_owner (2.0)
-|   |   |   |   |   |   |   |   |   |   Sex = Unknown: Return_to_owner (0.0)
-|   |   |   |   |   |   |   |   Month = July: Adoption (15.0/8.0)
-|   |   |   |   |   |   |   |   Month = November: Return_to_owner (20.0/7.0)
-|   |   |   |   |   |   |   |   Month = April
-|   |   |   |   |   |   |   |   |   WeekDay = Wed
-|   |   |   |   |   |   |   |   |   |   IsSingleColor = No: Euthanasia (3.0/1.0)
-|   |   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Transfer (5.0/2.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Sun: Return_to_owner (1.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Sat: Adoption (3.0/1.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Fri: Adoption (1.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Thu: Return_to_owner (4.0/1.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Tue: Return_to_owner (2.0/1.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Mon: Return_to_owner (0.0)
-|   |   |   |   |   |   |   |   Month = March: Adoption (21.0/10.0)
-|   |   |   |   |   |   |   |   Month = May: Return_to_owner (23.0/11.0)
-|   |   |   |   |   |   |   |   Month = December
-|   |   |   |   |   |   |   |   |   Sex = Male
-|   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 2555: Return_to_owner (9.0/3.0)
-|   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 2555: Adoption (4.0/1.0)
-|   |   |   |   |   |   |   |   |   Sex = Female: Adoption (13.0/7.0)
-|   |   |   |   |   |   |   |   |   Sex = Unknown: Return_to_owner (0.0)
-|   |   |   |   |   |   |   |   Month = June
-|   |   |   |   |   |   |   |   |   IsPopularBreed = No
-|   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 2190: Return_to_owner (6.0/1.0)
-|   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 2190: Transfer (4.0/1.0)
-|   |   |   |   |   |   |   |   |   IsPopularBreed = Yes: Adoption (6.0/2.0)
-|   |   |   |   |   |   |   |   Month = September
-|   |   |   |   |   |   |   |   |   Sex = Male
-|   |   |   |   |   |   |   |   |   |   IsPopularBreed = No: Transfer (12.0/4.0)
-|   |   |   |   |   |   |   |   |   |   IsPopularBreed = Yes: Adoption (3.0/1.0)
-|   |   |   |   |   |   |   |   |   Sex = Female: Return_to_owner (5.0/1.0)
-|   |   |   |   |   |   |   |   |   Sex = Unknown: Transfer (0.0)
-|   |   |   |   |   |   |   |   Month = August
-|   |   |   |   |   |   |   |   |   IsSingleColor = No: Return_to_owner (9.0/3.0)
-|   |   |   |   |   |   |   |   |   IsSingleColor = Yes
-|   |   |   |   |   |   |   |   |   |   Sex = Male: Adoption (4.0/1.0)
-|   |   |   |   |   |   |   |   |   |   Sex = Female: Return_to_owner (2.0)
-|   |   |   |   |   |   |   |   |   |   Sex = Unknown: Adoption (0.0)
+|   |   |   |   |   |   |   DayPeriod = Morning: Return_to_owner (231.0/127.0)
 |   |   |   |   |   |   |   DayPeriod = Evening: Adoption (60.0/30.0)
 |   |   |   |   |   |   BreedGroup = Working
 |   |   |   |   |   |   |   DaysuponOutcome <= 2555
 |   |   |   |   |   |   |   |   DayPeriod = Afternoon
-|   |   |   |   |   |   |   |   |   WeekDay = Wed
-|   |   |   |   |   |   |   |   |   |   IsSingleColor = No: Return_to_owner (18.0/9.0)
-|   |   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Adoption (6.0/1.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Wed: Adoption (24.0/14.0)
 |   |   |   |   |   |   |   |   |   WeekDay = Sun
 |   |   |   |   |   |   |   |   |   |   Month = February
 |   |   |   |   |   |   |   |   |   |   |   IsPopularBreed = No
@@ -653,10 +350,7 @@ Castrated = Yes
 |   |   |   |   |   |   |   |   |   |   Month = June: Return_to_owner (3.0/1.0)
 |   |   |   |   |   |   |   |   |   |   Month = September: Adoption (4.0)
 |   |   |   |   |   |   |   |   |   |   Month = August: Return_to_owner (1.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Sat
-|   |   |   |   |   |   |   |   |   |   Sex = Male: Adoption (20.0/8.0)
-|   |   |   |   |   |   |   |   |   |   Sex = Female: Return_to_owner (9.0/2.0)
-|   |   |   |   |   |   |   |   |   |   Sex = Unknown: Adoption (0.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Sat: Adoption (29.0/16.0)
 |   |   |   |   |   |   |   |   |   WeekDay = Fri: Return_to_owner (27.0/14.0)
 |   |   |   |   |   |   |   |   |   WeekDay = Thu
 |   |   |   |   |   |   |   |   |   |   Sex = Male: Adoption (16.0/10.0)
@@ -666,130 +360,69 @@ Castrated = Yes
 |   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1095: Adoption (20.0/11.0)
 |   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1095: Return_to_owner (17.0/6.0)
 |   |   |   |   |   |   |   |   |   WeekDay = Mon
-|   |   |   |   |   |   |   |   |   |   Sex = Male
-|   |   |   |   |   |   |   |   |   |   |   IsMix = Yes: Adoption (12.0/4.0)
-|   |   |   |   |   |   |   |   |   |   |   IsMix = No: Return_to_owner (2.0)
+|   |   |   |   |   |   |   |   |   |   Sex = Male: Adoption (14.0/6.0)
 |   |   |   |   |   |   |   |   |   |   Sex = Female: Return_to_owner (16.0/6.0)
 |   |   |   |   |   |   |   |   |   |   Sex = Unknown: Return_to_owner (0.0)
 |   |   |   |   |   |   |   |   DayPeriod = Morning
 |   |   |   |   |   |   |   |   |   WeekDay = Wed: Return_to_owner (6.0/1.0)
-|   |   |   |   |   |   |   |   |   WeekDay = Sun
-|   |   |   |   |   |   |   |   |   |   IsMix = Yes
-|   |   |   |   |   |   |   |   |   |   |   IsSingleColor = No: Adoption (4.0/1.0)
-|   |   |   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Return_to_owner (3.0)
-|   |   |   |   |   |   |   |   |   |   IsMix = No: Return_to_owner (4.0)
+|   |   |   |   |   |   |   |   |   WeekDay = Sun: Return_to_owner (11.0/3.0)
 |   |   |   |   |   |   |   |   |   WeekDay = Sat: Adoption (12.0/5.0)
 |   |   |   |   |   |   |   |   |   WeekDay = Fri
 |   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1095: Return_to_owner (3.0/2.0)
 |   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1095: Transfer (3.0)
 |   |   |   |   |   |   |   |   |   WeekDay = Thu: Return_to_owner (10.0/5.0)
 |   |   |   |   |   |   |   |   |   WeekDay = Tue
-|   |   |   |   |   |   |   |   |   |   IsSingleColor = No: Adoption (6.0/2.0)
-|   |   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Return_to_owner (5.0/2.0)
+|   |   |   |   |   |   |   |   |   |   Season = Winter: Euthanasia (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Season = Fall: Return_to_owner (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Season = Summer: Adoption (2.0)
+|   |   |   |   |   |   |   |   |   |   Season = Spring: Return_to_owner (2.0/1.0)
 |   |   |   |   |   |   |   |   |   WeekDay = Mon
 |   |   |   |   |   |   |   |   |   |   Sex = Male: Return_to_owner (2.0/1.0)
 |   |   |   |   |   |   |   |   |   |   Sex = Female: Transfer (4.0/1.0)
 |   |   |   |   |   |   |   |   |   |   Sex = Unknown: Transfer (0.0)
 |   |   |   |   |   |   |   |   DayPeriod = Evening: Adoption (12.0/1.0)
-|   |   |   |   |   |   |   DaysuponOutcome > 2555
-|   |   |   |   |   |   |   |   WeekDay = Wed
-|   |   |   |   |   |   |   |   |   IsMix = Yes: Return_to_owner (6.0/2.0)
-|   |   |   |   |   |   |   |   |   IsMix = No: Euthanasia (2.0/1.0)
-|   |   |   |   |   |   |   |   WeekDay = Sun: Adoption (6.0/1.0)
-|   |   |   |   |   |   |   |   WeekDay = Sat: Return_to_owner (8.0/2.0)
-|   |   |   |   |   |   |   |   WeekDay = Fri: Return_to_owner (13.0/5.0)
-|   |   |   |   |   |   |   |   WeekDay = Thu
-|   |   |   |   |   |   |   |   |   Sex = Male: Return_to_owner (5.0/2.0)
-|   |   |   |   |   |   |   |   |   Sex = Female
-|   |   |   |   |   |   |   |   |   |   Season = Winter: Adoption (1.0)
-|   |   |   |   |   |   |   |   |   |   Season = Fall: Adoption (2.0)
-|   |   |   |   |   |   |   |   |   |   Season = Summer: Adoption (1.0)
-|   |   |   |   |   |   |   |   |   |   Season = Spring: Return_to_owner (3.0)
-|   |   |   |   |   |   |   |   |   Sex = Unknown: Return_to_owner (0.0)
-|   |   |   |   |   |   |   |   WeekDay = Tue: Return_to_owner (11.0/1.0)
-|   |   |   |   |   |   |   |   WeekDay = Mon
-|   |   |   |   |   |   |   |   |   DaysuponOutcome <= 3285: Return_to_owner (5.0/2.0)
-|   |   |   |   |   |   |   |   |   DaysuponOutcome > 3285: Transfer (2.0)
+|   |   |   |   |   |   |   DaysuponOutcome > 2555: Return_to_owner (65.0/28.0)
 |   |   |   |   |   |   BreedGroup = Group 2: Return_to_owner (0.0)
 |   |   |   |   |   |   BreedGroup = Unknown: Adoption (47.0/23.0)
 |   |   |   |   |   |   BreedGroup = Hound
-|   |   |   |   |   |   |   IsHoliday = No
-|   |   |   |   |   |   |   |   WeekDay = Wed: Return_to_owner (40.0/17.0)
-|   |   |   |   |   |   |   |   WeekDay = Sun
-|   |   |   |   |   |   |   |   |   Month = February: Return_to_owner (4.0/2.0)
-|   |   |   |   |   |   |   |   |   Month = October: Return_to_owner (8.0/3.0)
-|   |   |   |   |   |   |   |   |   Month = January
-|   |   |   |   |   |   |   |   |   |   Sex = Male
-|   |   |   |   |   |   |   |   |   |   |   IsSingleColor = No: Adoption (3.0/1.0)
-|   |   |   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Return_to_owner (3.0/1.0)
-|   |   |   |   |   |   |   |   |   |   Sex = Female: Transfer (3.0/1.0)
-|   |   |   |   |   |   |   |   |   |   Sex = Unknown: Return_to_owner (0.0)
-|   |   |   |   |   |   |   |   |   Month = July: Return_to_owner (3.0/1.0)
-|   |   |   |   |   |   |   |   |   Month = November
-|   |   |   |   |   |   |   |   |   |   IsSingleColor = No
-|   |   |   |   |   |   |   |   |   |   |   IsMix = Yes: Adoption (2.0)
-|   |   |   |   |   |   |   |   |   |   |   IsMix = No: Return_to_owner (2.0)
-|   |   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Return_to_owner (4.0/1.0)
-|   |   |   |   |   |   |   |   |   Month = April: Return_to_owner (2.0/1.0)
-|   |   |   |   |   |   |   |   |   Month = March: Adoption (5.0/2.0)
-|   |   |   |   |   |   |   |   |   Month = May
-|   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1095: Return_to_owner (2.0/1.0)
-|   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1095: Adoption (3.0/1.0)
-|   |   |   |   |   |   |   |   |   Month = December: Adoption (7.0)
-|   |   |   |   |   |   |   |   |   Month = June
-|   |   |   |   |   |   |   |   |   |   IsSingleColor = No: Return_to_owner (4.0/1.0)
-|   |   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Adoption (2.0)
-|   |   |   |   |   |   |   |   |   Month = September: Adoption (5.0/1.0)
-|   |   |   |   |   |   |   |   |   Month = August: Return_to_owner (6.0/2.0)
-|   |   |   |   |   |   |   |   WeekDay = Sat
-|   |   |   |   |   |   |   |   |   DayPeriod = Afternoon
-|   |   |   |   |   |   |   |   |   |   Month = February: Adoption (2.0)
-|   |   |   |   |   |   |   |   |   |   Month = October: Return_to_owner (2.0/1.0)
-|   |   |   |   |   |   |   |   |   |   Month = January
-|   |   |   |   |   |   |   |   |   |   |   IsSingleColor = No: Return_to_owner (2.0/1.0)
-|   |   |   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Adoption (3.0)
-|   |   |   |   |   |   |   |   |   |   Month = July: Adoption (2.0)
-|   |   |   |   |   |   |   |   |   |   Month = November: Return_to_owner (3.0/1.0)
-|   |   |   |   |   |   |   |   |   |   Month = April: Adoption (0.0)
-|   |   |   |   |   |   |   |   |   |   Month = March: Adoption (0.0)
-|   |   |   |   |   |   |   |   |   |   Month = May: Adoption (0.0)
-|   |   |   |   |   |   |   |   |   |   Month = December: Return_to_owner (5.0/1.0)
-|   |   |   |   |   |   |   |   |   |   Month = June: Adoption (0.0)
-|   |   |   |   |   |   |   |   |   |   Month = September: Return_to_owner (5.0/1.0)
-|   |   |   |   |   |   |   |   |   |   Month = August: Adoption (2.0)
-|   |   |   |   |   |   |   |   |   DayPeriod = Morning
-|   |   |   |   |   |   |   |   |   |   Season = Winter: Return_to_owner (2.0)
-|   |   |   |   |   |   |   |   |   |   Season = Fall: Adoption (4.0/2.0)
-|   |   |   |   |   |   |   |   |   |   Season = Summer: Return_to_owner (3.0/1.0)
-|   |   |   |   |   |   |   |   |   |   Season = Spring: Return_to_owner (0.0)
-|   |   |   |   |   |   |   |   |   DayPeriod = Evening: Adoption (1.0)
-|   |   |   |   |   |   |   |   WeekDay = Fri
-|   |   |   |   |   |   |   |   |   Sex = Male: Return_to_owner (28.0/11.0)
-|   |   |   |   |   |   |   |   |   Sex = Female: Adoption (15.0/7.0)
+|   |   |   |   |   |   |   WeekDay = Wed: Return_to_owner (46.0/19.0)
+|   |   |   |   |   |   |   WeekDay = Sun
+|   |   |   |   |   |   |   |   Month = February: Return_to_owner (4.0/2.0)
+|   |   |   |   |   |   |   |   Month = October: Return_to_owner (8.0/3.0)
+|   |   |   |   |   |   |   |   Month = January
+|   |   |   |   |   |   |   |   |   Sex = Male: Return_to_owner (6.0/3.0)
+|   |   |   |   |   |   |   |   |   Sex = Female: Transfer (3.0/1.0)
 |   |   |   |   |   |   |   |   |   Sex = Unknown: Return_to_owner (0.0)
-|   |   |   |   |   |   |   |   WeekDay = Thu
-|   |   |   |   |   |   |   |   |   IsMix = Yes
-|   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 2190: Return_to_owner (21.0/7.0)
-|   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 2190: Transfer (10.0/3.0)
-|   |   |   |   |   |   |   |   |   IsMix = No: Adoption (9.0/5.0)
-|   |   |   |   |   |   |   |   WeekDay = Tue: Return_to_owner (40.0/16.0)
-|   |   |   |   |   |   |   |   WeekDay = Mon
-|   |   |   |   |   |   |   |   |   Sex = Male: Return_to_owner (28.0/13.0)
-|   |   |   |   |   |   |   |   |   Sex = Female: Adoption (19.0/11.0)
-|   |   |   |   |   |   |   |   |   Sex = Unknown: Return_to_owner (0.0)
-|   |   |   |   |   |   |   IsHoliday = Yes
-|   |   |   |   |   |   |   |   WeekDay = Wed: Return_to_owner (6.0/2.0)
-|   |   |   |   |   |   |   |   WeekDay = Sun
-|   |   |   |   |   |   |   |   |   IsSingleColor = No: Return_to_owner (4.0/1.0)
-|   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Adoption (2.0)
-|   |   |   |   |   |   |   |   WeekDay = Sat: Adoption (8.0/1.0)
-|   |   |   |   |   |   |   |   WeekDay = Fri: Adoption (5.0/2.0)
-|   |   |   |   |   |   |   |   WeekDay = Thu
-|   |   |   |   |   |   |   |   |   Sex = Male: Euthanasia (3.0/1.0)
-|   |   |   |   |   |   |   |   |   Sex = Female: Adoption (3.0)
-|   |   |   |   |   |   |   |   |   Sex = Unknown: Adoption (0.0)
-|   |   |   |   |   |   |   |   WeekDay = Tue: Adoption (10.0/4.0)
-|   |   |   |   |   |   |   |   WeekDay = Mon: Return_to_owner (6.0/3.0)
+|   |   |   |   |   |   |   |   Month = July: Return_to_owner (3.0/1.0)
+|   |   |   |   |   |   |   |   Month = November: Return_to_owner (9.0/3.0)
+|   |   |   |   |   |   |   |   Month = April: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   |   |   Month = March: Adoption (5.0/2.0)
+|   |   |   |   |   |   |   |   Month = May
+|   |   |   |   |   |   |   |   |   IsPopularBreed = No: Adoption (5.0/2.0)
+|   |   |   |   |   |   |   |   |   IsPopularBreed = Yes: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   |   |   Month = December
+|   |   |   |   |   |   |   |   |   IsHoliday = No: Adoption (7.0)
+|   |   |   |   |   |   |   |   |   IsHoliday = Yes: Return_to_owner (2.0)
+|   |   |   |   |   |   |   |   Month = June
+|   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1460: Adoption (2.0)
+|   |   |   |   |   |   |   |   |   DaysuponOutcome > 1460: Return_to_owner (4.0/1.0)
+|   |   |   |   |   |   |   |   Month = September: Adoption (6.0/1.0)
+|   |   |   |   |   |   |   |   Month = August: Return_to_owner (6.0/2.0)
+|   |   |   |   |   |   |   WeekDay = Sat: Adoption (44.0/21.0)
+|   |   |   |   |   |   |   WeekDay = Fri
+|   |   |   |   |   |   |   |   Sex = Male: Return_to_owner (31.0/13.0)
+|   |   |   |   |   |   |   |   Sex = Female: Adoption (17.0/7.0)
+|   |   |   |   |   |   |   |   Sex = Unknown: Return_to_owner (0.0)
+|   |   |   |   |   |   |   WeekDay = Thu
+|   |   |   |   |   |   |   |   DaysuponOutcome <= 2555: Return_to_owner (36.0/20.0)
+|   |   |   |   |   |   |   |   DaysuponOutcome > 2555: Transfer (10.0/5.0)
+|   |   |   |   |   |   |   WeekDay = Tue
+|   |   |   |   |   |   |   |   IsHoliday = No: Return_to_owner (40.0/16.0)
+|   |   |   |   |   |   |   |   IsHoliday = Yes: Adoption (10.0/4.0)
+|   |   |   |   |   |   |   WeekDay = Mon
+|   |   |   |   |   |   |   |   Sex = Male: Return_to_owner (31.0/14.0)
+|   |   |   |   |   |   |   |   Sex = Female: Adoption (22.0/12.0)
+|   |   |   |   |   |   |   |   Sex = Unknown: Return_to_owner (0.0)
 |   |   |   |   |   |   BreedGroup = Group 3: Return_to_owner (0.0)
 |   |   |   |   |   |   BreedGroup = Sporting: Return_to_owner (575.0/288.0)
 |   |   |   |   |   |   BreedGroup = Group 1: Return_to_owner (0.0)
@@ -822,9 +455,7 @@ Castrated = Yes
 |   |   |   |   |   |   |   BreedGroup = Unknown: Transfer (0.0)
 |   |   |   |   |   |   |   BreedGroup = Hound: Transfer (0.0)
 |   |   |   |   |   |   |   BreedGroup = Group 3
-|   |   |   |   |   |   |   |   DaysuponOutcome <= 1095
-|   |   |   |   |   |   |   |   |   IsSingleColor = No: Adoption (4.0)
-|   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Transfer (5.0/1.0)
+|   |   |   |   |   |   |   |   DaysuponOutcome <= 1095: Adoption (9.0/4.0)
 |   |   |   |   |   |   |   |   DaysuponOutcome > 1095: Return_to_owner (3.0)
 |   |   |   |   |   |   |   BreedGroup = Sporting: Transfer (0.0)
 |   |   |   |   |   |   |   BreedGroup = Group 1: Adoption (1.0)
@@ -861,42 +492,32 @@ Castrated = Yes
 |   |   |   |   |   |   BreedGroup = Group 4
 |   |   |   |   |   |   |   Month = February
 |   |   |   |   |   |   |   |   DayPeriod = Afternoon: Adoption (10.0/2.0)
-|   |   |   |   |   |   |   |   DayPeriod = Morning
-|   |   |   |   |   |   |   |   |   IsSingleColor = No: Transfer (5.0/1.0)
-|   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   |   |   DayPeriod = Morning: Transfer (7.0/3.0)
 |   |   |   |   |   |   |   |   DayPeriod = Evening: Return_to_owner (1.0)
 |   |   |   |   |   |   |   Month = October
 |   |   |   |   |   |   |   |   Sex = Male
 |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 730: Adoption (2.0/1.0)
 |   |   |   |   |   |   |   |   |   DaysuponOutcome > 730: Return_to_owner (6.0/2.0)
 |   |   |   |   |   |   |   |   Sex = Female
-|   |   |   |   |   |   |   |   |   IsSingleColor = No: Adoption (4.0)
-|   |   |   |   |   |   |   |   |   IsSingleColor = Yes
-|   |   |   |   |   |   |   |   |   |   DayPeriod = Afternoon: Transfer (4.0/1.0)
-|   |   |   |   |   |   |   |   |   |   DayPeriod = Morning: Euthanasia (2.0/1.0)
-|   |   |   |   |   |   |   |   |   |   DayPeriod = Evening: Transfer (0.0)
+|   |   |   |   |   |   |   |   |   DaysuponOutcome <= 270: Transfer (2.0)
+|   |   |   |   |   |   |   |   |   DaysuponOutcome > 270: Adoption (8.0/2.0)
 |   |   |   |   |   |   |   |   Sex = Unknown: Adoption (0.0)
 |   |   |   |   |   |   |   Month = January
-|   |   |   |   |   |   |   |   IsSingleColor = No: Transfer (6.0/2.0)
-|   |   |   |   |   |   |   |   IsSingleColor = Yes
-|   |   |   |   |   |   |   |   |   DayPeriod = Afternoon
-|   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1095: Transfer (6.0/2.0)
-|   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 1095
-|   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 2190: Return_to_owner (5.0)
-|   |   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 2190: Transfer (2.0)
-|   |   |   |   |   |   |   |   |   DayPeriod = Morning
-|   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 365: Return_to_owner (2.0/1.0)
-|   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 365: Adoption (2.0)
-|   |   |   |   |   |   |   |   |   DayPeriod = Evening: Return_to_owner (0.0)
-|   |   |   |   |   |   |   Month = July
-|   |   |   |   |   |   |   |   DaysuponOutcome <= 730: Return_to_owner (3.0/2.0)
-|   |   |   |   |   |   |   |   DaysuponOutcome > 730
-|   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1460: Adoption (4.0/1.0)
-|   |   |   |   |   |   |   |   |   DaysuponOutcome > 1460: Transfer (4.0/1.0)
+|   |   |   |   |   |   |   |   DayPeriod = Afternoon
+|   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1095: Transfer (8.0/3.0)
+|   |   |   |   |   |   |   |   |   DaysuponOutcome > 1095
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 2190: Return_to_owner (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 2190: Transfer (2.0)
+|   |   |   |   |   |   |   |   DayPeriod = Morning
+|   |   |   |   |   |   |   |   |   DaysuponOutcome <= 730: Transfer (4.0/2.0)
+|   |   |   |   |   |   |   |   |   DaysuponOutcome > 730: Adoption (2.0)
+|   |   |   |   |   |   |   |   DayPeriod = Evening: Transfer (1.0)
+|   |   |   |   |   |   |   Month = July: Transfer (11.0/6.0)
 |   |   |   |   |   |   |   Month = November
 |   |   |   |   |   |   |   |   DaysuponOutcome <= 365
-|   |   |   |   |   |   |   |   |   IsSingleColor = No: Transfer (4.0/1.0)
-|   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Adoption (2.0)
+|   |   |   |   |   |   |   |   |   Sex = Male: Transfer (3.0/1.0)
+|   |   |   |   |   |   |   |   |   Sex = Female: Adoption (3.0/1.0)
+|   |   |   |   |   |   |   |   |   Sex = Unknown: Adoption (0.0)
 |   |   |   |   |   |   |   |   DaysuponOutcome > 365
 |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 730: Return_to_owner (5.0/1.0)
 |   |   |   |   |   |   |   |   |   DaysuponOutcome > 730: Transfer (10.0/3.0)
@@ -904,19 +525,8 @@ Castrated = Yes
 |   |   |   |   |   |   |   Month = March
 |   |   |   |   |   |   |   |   DaysuponOutcome <= 1095: Adoption (10.0/3.0)
 |   |   |   |   |   |   |   |   DaysuponOutcome > 1095: Transfer (5.0/1.0)
-|   |   |   |   |   |   |   Month = May
-|   |   |   |   |   |   |   |   IsHoliday = No
-|   |   |   |   |   |   |   |   |   IsSingleColor = No: Adoption (4.0/1.0)
-|   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Transfer (4.0/1.0)
-|   |   |   |   |   |   |   |   IsHoliday = Yes: Adoption (5.0/1.0)
-|   |   |   |   |   |   |   Month = December
-|   |   |   |   |   |   |   |   IsSingleColor = No
-|   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1095: Transfer (7.0/1.0)
-|   |   |   |   |   |   |   |   |   DaysuponOutcome > 1095: Euthanasia (4.0/2.0)
-|   |   |   |   |   |   |   |   IsSingleColor = Yes
-|   |   |   |   |   |   |   |   |   Sex = Male: Transfer (9.0/2.0)
-|   |   |   |   |   |   |   |   |   Sex = Female: Adoption (13.0/6.0)
-|   |   |   |   |   |   |   |   |   Sex = Unknown: Transfer (0.0)
+|   |   |   |   |   |   |   Month = May: Adoption (13.0/5.0)
+|   |   |   |   |   |   |   Month = December: Transfer (33.0/16.0)
 |   |   |   |   |   |   |   Month = June: Adoption (2.0/1.0)
 |   |   |   |   |   |   |   Month = September
 |   |   |   |   |   |   |   |   DayPeriod = Afternoon
@@ -946,16 +556,11 @@ Castrated = Yes
 |   |   |   |   |   |   BreedGroup = Terrier&Toy: Adoption (0.0)
 |   |   |   |   |   WeekDay = Thu
 |   |   |   |   |   |   IsHoliday = No
-|   |   |   |   |   |   |   Month = February
-|   |   |   |   |   |   |   |   DayPeriod = Afternoon
-|   |   |   |   |   |   |   |   |   IsSingleColor = No: Adoption (6.0/2.0)
-|   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Transfer (10.0/4.0)
-|   |   |   |   |   |   |   |   DayPeriod = Morning: Adoption (5.0/2.0)
-|   |   |   |   |   |   |   |   DayPeriod = Evening: Adoption (0.0)
+|   |   |   |   |   |   |   Month = February: Adoption (21.0/11.0)
 |   |   |   |   |   |   |   Month = October: Transfer (23.0/8.0)
 |   |   |   |   |   |   |   Month = January
-|   |   |   |   |   |   |   |   IsSingleColor = No: Return_to_owner (6.0/3.0)
-|   |   |   |   |   |   |   |   IsSingleColor = Yes: Adoption (19.0/11.0)
+|   |   |   |   |   |   |   |   IsPopularBreed = No: Adoption (23.0/14.0)
+|   |   |   |   |   |   |   |   IsPopularBreed = Yes: Return_to_owner (2.0)
 |   |   |   |   |   |   |   Month = July
 |   |   |   |   |   |   |   |   DayPeriod = Afternoon
 |   |   |   |   |   |   |   |   |   Sex = Male: Adoption (4.0/1.0)
@@ -970,7 +575,10 @@ Castrated = Yes
 |   |   |   |   |   |   |   |   DaysuponOutcome <= 365: Return_to_owner (3.0/1.0)
 |   |   |   |   |   |   |   |   DaysuponOutcome > 365: Transfer (8.0/4.0)
 |   |   |   |   |   |   |   Month = March: Return_to_owner (3.0/2.0)
-|   |   |   |   |   |   |   Month = May: Transfer (8.0/4.0)
+|   |   |   |   |   |   |   Month = May
+|   |   |   |   |   |   |   |   Sex = Male: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   |   |   Sex = Female: Transfer (6.0/2.0)
+|   |   |   |   |   |   |   |   Sex = Unknown: Transfer (0.0)
 |   |   |   |   |   |   |   Month = December: Transfer (24.0/7.0)
 |   |   |   |   |   |   |   Month = June
 |   |   |   |   |   |   |   |   Sex = Male
@@ -980,14 +588,9 @@ Castrated = Yes
 |   |   |   |   |   |   |   |   Sex = Unknown: Adoption (0.0)
 |   |   |   |   |   |   |   Month = September: Transfer (18.0/7.0)
 |   |   |   |   |   |   |   Month = August
-|   |   |   |   |   |   |   |   IsSingleColor = No
-|   |   |   |   |   |   |   |   |   DaysuponOutcome <= 1460: Adoption (3.0/1.0)
-|   |   |   |   |   |   |   |   |   DaysuponOutcome > 1460: Return_to_owner (4.0/2.0)
-|   |   |   |   |   |   |   |   IsSingleColor = Yes
-|   |   |   |   |   |   |   |   |   DaysuponOutcome <= 365: Adoption (5.0/2.0)
-|   |   |   |   |   |   |   |   |   DaysuponOutcome > 365
-|   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 730: Return_to_owner (4.0/1.0)
-|   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 730: Transfer (3.0)
+|   |   |   |   |   |   |   |   DayPeriod = Afternoon: Transfer (16.0/8.0)
+|   |   |   |   |   |   |   |   DayPeriod = Morning: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   |   |   DayPeriod = Evening: Adoption (1.0)
 |   |   |   |   |   |   IsHoliday = Yes
 |   |   |   |   |   |   |   BreedGroup = Herding: Adoption (0.0)
 |   |   |   |   |   |   |   BreedGroup = Group 4: Adoption (24.0/8.0)
@@ -1003,219 +606,133 @@ Castrated = Yes
 |   |   |   |   |   |   |   BreedGroup = Sporting: Adoption (0.0)
 |   |   |   |   |   |   |   BreedGroup = Group 1: Adoption (0.0)
 |   |   |   |   |   |   |   BreedGroup = Terrier&Toy: Adoption (0.0)
-|   |   |   |   |   WeekDay = Tue
-|   |   |   |   |   |   BreedGroup = Herding: Transfer (0.0)
-|   |   |   |   |   |   BreedGroup = Group 4: Transfer (283.0/127.0)
-|   |   |   |   |   |   BreedGroup = Pit Bull: Transfer (0.0)
-|   |   |   |   |   |   BreedGroup = Non-Sporting: Transfer (0.0)
-|   |   |   |   |   |   BreedGroup = Terrier: Transfer (0.0)
-|   |   |   |   |   |   BreedGroup = Toy: Transfer (0.0)
-|   |   |   |   |   |   BreedGroup = Working: Transfer (0.0)
-|   |   |   |   |   |   BreedGroup = Group 2: Transfer (13.0/5.0)
-|   |   |   |   |   |   BreedGroup = Unknown: Transfer (0.0)
-|   |   |   |   |   |   BreedGroup = Hound: Transfer (0.0)
-|   |   |   |   |   |   BreedGroup = Group 3
-|   |   |   |   |   |   |   IsSingleColor = No: Transfer (2.0)
-|   |   |   |   |   |   |   IsSingleColor = Yes: Adoption (7.0/2.0)
-|   |   |   |   |   |   BreedGroup = Sporting: Transfer (0.0)
-|   |   |   |   |   |   BreedGroup = Group 1: Adoption (4.0/1.0)
-|   |   |   |   |   |   BreedGroup = Terrier&Toy: Transfer (0.0)
+|   |   |   |   |   WeekDay = Tue: Transfer (309.0/142.0)
 |   |   |   |   |   WeekDay = Mon
-|   |   |   |   |   |   BreedGroup = Herding: Transfer (0.0)
-|   |   |   |   |   |   BreedGroup = Group 4
-|   |   |   |   |   |   |   Month = February
-|   |   |   |   |   |   |   |   Sex = Male: Adoption (10.0/4.0)
-|   |   |   |   |   |   |   |   Sex = Female: Transfer (8.0/3.0)
-|   |   |   |   |   |   |   |   Sex = Unknown: Adoption (0.0)
-|   |   |   |   |   |   |   Month = October
-|   |   |   |   |   |   |   |   Sex = Male: Adoption (6.0/2.0)
-|   |   |   |   |   |   |   |   Sex = Female: Transfer (11.0/6.0)
-|   |   |   |   |   |   |   |   Sex = Unknown: Adoption (0.0)
-|   |   |   |   |   |   |   Month = January: Transfer (19.0/10.0)
-|   |   |   |   |   |   |   Month = July
-|   |   |   |   |   |   |   |   DayPeriod = Afternoon
-|   |   |   |   |   |   |   |   |   IsSingleColor = No: Adoption (2.0)
-|   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Transfer (6.0/1.0)
-|   |   |   |   |   |   |   |   DayPeriod = Morning
-|   |   |   |   |   |   |   |   |   DaysuponOutcome <= 365: Transfer (5.0/1.0)
-|   |   |   |   |   |   |   |   |   DaysuponOutcome > 365: Adoption (2.0)
-|   |   |   |   |   |   |   |   DayPeriod = Evening: Return_to_owner (1.0)
-|   |   |   |   |   |   |   Month = November
-|   |   |   |   |   |   |   |   DayPeriod = Afternoon
-|   |   |   |   |   |   |   |   |   DaysuponOutcome <= 2190: Transfer (15.0/6.0)
-|   |   |   |   |   |   |   |   |   DaysuponOutcome > 2190: Adoption (2.0)
-|   |   |   |   |   |   |   |   DayPeriod = Morning: Return_to_owner (6.0/2.0)
-|   |   |   |   |   |   |   |   DayPeriod = Evening: Adoption (1.0)
-|   |   |   |   |   |   |   Month = April
-|   |   |   |   |   |   |   |   DaysuponOutcome <= 1825: Transfer (13.0/5.0)
-|   |   |   |   |   |   |   |   DaysuponOutcome > 1825: Return_to_owner (4.0/2.0)
-|   |   |   |   |   |   |   Month = March
-|   |   |   |   |   |   |   |   Sex = Male: Transfer (12.0/4.0)
-|   |   |   |   |   |   |   |   Sex = Female
-|   |   |   |   |   |   |   |   |   DaysuponOutcome <= 365: Return_to_owner (3.0/1.0)
-|   |   |   |   |   |   |   |   |   DaysuponOutcome > 365: Adoption (3.0/1.0)
-|   |   |   |   |   |   |   |   Sex = Unknown: Transfer (0.0)
-|   |   |   |   |   |   |   Month = May
-|   |   |   |   |   |   |   |   IsSingleColor = No: Transfer (14.0/5.0)
-|   |   |   |   |   |   |   |   IsSingleColor = Yes: Adoption (12.0/4.0)
-|   |   |   |   |   |   |   Month = December
-|   |   |   |   |   |   |   |   DayPeriod = Afternoon: Transfer (26.0/10.0)
-|   |   |   |   |   |   |   |   DayPeriod = Morning: Adoption (6.0/2.0)
-|   |   |   |   |   |   |   |   DayPeriod = Evening: Transfer (4.0/1.0)
-|   |   |   |   |   |   |   Month = June
-|   |   |   |   |   |   |   |   Sex = Male: Return_to_owner (5.0/2.0)
-|   |   |   |   |   |   |   |   Sex = Female: Transfer (9.0/3.0)
-|   |   |   |   |   |   |   |   Sex = Unknown: Transfer (0.0)
-|   |   |   |   |   |   |   Month = September
-|   |   |   |   |   |   |   |   DayPeriod = Afternoon
-|   |   |   |   |   |   |   |   |   Sex = Male: Adoption (2.0)
-|   |   |   |   |   |   |   |   |   Sex = Female
-|   |   |   |   |   |   |   |   |   |   IsSingleColor = No: Return_to_owner (3.0/1.0)
-|   |   |   |   |   |   |   |   |   |   IsSingleColor = Yes: Adoption (5.0/2.0)
-|   |   |   |   |   |   |   |   |   Sex = Unknown: Adoption (0.0)
-|   |   |   |   |   |   |   |   DayPeriod = Morning: Return_to_owner (2.0)
-|   |   |   |   |   |   |   |   DayPeriod = Evening: Adoption (1.0)
-|   |   |   |   |   |   |   Month = August
-|   |   |   |   |   |   |   |   Sex = Male: Transfer (9.0/4.0)
-|   |   |   |   |   |   |   |   Sex = Female
-|   |   |   |   |   |   |   |   |   IsHoliday = No: Adoption (7.0)
-|   |   |   |   |   |   |   |   |   IsHoliday = Yes: Return_to_owner (3.0/1.0)
-|   |   |   |   |   |   |   |   Sex = Unknown: Adoption (0.0)
-|   |   |   |   |   |   BreedGroup = Pit Bull: Transfer (0.0)
-|   |   |   |   |   |   BreedGroup = Non-Sporting: Transfer (0.0)
-|   |   |   |   |   |   BreedGroup = Terrier: Transfer (0.0)
-|   |   |   |   |   |   BreedGroup = Toy: Transfer (0.0)
-|   |   |   |   |   |   BreedGroup = Working: Transfer (0.0)
-|   |   |   |   |   |   BreedGroup = Group 2: Adoption (12.0/6.0)
-|   |   |   |   |   |   BreedGroup = Unknown: Transfer (0.0)
-|   |   |   |   |   |   BreedGroup = Hound: Transfer (0.0)
-|   |   |   |   |   |   BreedGroup = Group 3
-|   |   |   |   |   |   |   Sex = Male: Return_to_owner (3.0)
-|   |   |   |   |   |   |   Sex = Female
-|   |   |   |   |   |   |   |   IsSingleColor = No: Return_to_owner (2.0)
-|   |   |   |   |   |   |   |   IsSingleColor = Yes: Transfer (5.0/1.0)
-|   |   |   |   |   |   |   Sex = Unknown: Return_to_owner (0.0)
-|   |   |   |   |   |   BreedGroup = Sporting: Transfer (0.0)
-|   |   |   |   |   |   BreedGroup = Group 1: Adoption (3.0/1.0)
-|   |   |   |   |   |   BreedGroup = Terrier&Toy: Transfer (0.0)
-|   |   |   |   DaysuponOutcome > 2920
-|   |   |   |   |   BreedGroup = Herding: Adoption (0.0)
-|   |   |   |   |   BreedGroup = Group 4
-|   |   |   |   |   |   WeekDay = Wed
-|   |   |   |   |   |   |   Month = February: Return_to_owner (1.0)
-|   |   |   |   |   |   |   Month = October
-|   |   |   |   |   |   |   |   DaysuponOutcome <= 3650
-|   |   |   |   |   |   |   |   |   DaysuponOutcome <= 3285: Transfer (2.0)
-|   |   |   |   |   |   |   |   |   DaysuponOutcome > 3285: Adoption (2.0)
-|   |   |   |   |   |   |   |   DaysuponOutcome > 3650
-|   |   |   |   |   |   |   |   |   DaysuponOutcome <= 4745: Return_to_owner (2.0)
-|   |   |   |   |   |   |   |   |   DaysuponOutcome > 4745: Transfer (2.0)
-|   |   |   |   |   |   |   Month = January: Adoption (5.0/1.0)
-|   |   |   |   |   |   |   Month = July: Return_to_owner (2.0/1.0)
-|   |   |   |   |   |   |   Month = November: Euthanasia (2.0/1.0)
-|   |   |   |   |   |   |   Month = April: Return_to_owner (1.0)
-|   |   |   |   |   |   |   Month = March: Adoption (3.0/1.0)
-|   |   |   |   |   |   |   Month = May: Adoption (1.0)
-|   |   |   |   |   |   |   Month = December: Return_to_owner (3.0/2.0)
-|   |   |   |   |   |   |   Month = June: Transfer (1.0)
-|   |   |   |   |   |   |   Month = September: Adoption (2.0)
-|   |   |   |   |   |   |   Month = August: Euthanasia (2.0)
-|   |   |   |   |   |   WeekDay = Sun: Adoption (41.0/9.0)
-|   |   |   |   |   |   WeekDay = Sat: Adoption (42.0/18.0)
-|   |   |   |   |   |   WeekDay = Fri
-|   |   |   |   |   |   |   DayPeriod = Afternoon: Adoption (29.0/12.0)
-|   |   |   |   |   |   |   DayPeriod = Morning: Transfer (14.0/8.0)
-|   |   |   |   |   |   |   DayPeriod = Evening: Adoption (1.0)
-|   |   |   |   |   |   WeekDay = Thu
-|   |   |   |   |   |   |   DayPeriod = Afternoon: Transfer (17.0/9.0)
-|   |   |   |   |   |   |   DayPeriod = Morning
-|   |   |   |   |   |   |   |   DaysuponOutcome <= 4015: Return_to_owner (3.0/1.0)
-|   |   |   |   |   |   |   |   DaysuponOutcome > 4015: Adoption (2.0)
-|   |   |   |   |   |   |   DayPeriod = Evening: Return_to_owner (2.0/1.0)
-|   |   |   |   |   |   WeekDay = Tue
+|   |   |   |   |   |   Month = February
+|   |   |   |   |   |   |   Sex = Male: Adoption (11.0/5.0)
+|   |   |   |   |   |   |   Sex = Female: Transfer (10.0/4.0)
+|   |   |   |   |   |   |   Sex = Unknown: Transfer (0.0)
+|   |   |   |   |   |   Month = October
+|   |   |   |   |   |   |   Sex = Male: Adoption (7.0/2.0)
+|   |   |   |   |   |   |   Sex = Female: Transfer (12.0/6.0)
+|   |   |   |   |   |   |   Sex = Unknown: Adoption (0.0)
+|   |   |   |   |   |   Month = January: Transfer (22.0/13.0)
+|   |   |   |   |   |   Month = July
 |   |   |   |   |   |   |   DayPeriod = Afternoon
-|   |   |   |   |   |   |   |   Month = February: Euthanasia (1.0)
-|   |   |   |   |   |   |   |   Month = October: Euthanasia (1.0)
-|   |   |   |   |   |   |   |   Month = January: Transfer (0.0)
-|   |   |   |   |   |   |   |   Month = July: Transfer (4.0)
-|   |   |   |   |   |   |   |   Month = November: Transfer (0.0)
-|   |   |   |   |   |   |   |   Month = April: Transfer (2.0)
-|   |   |   |   |   |   |   |   Month = March: Return_to_owner (3.0/1.0)
-|   |   |   |   |   |   |   |   Month = May: Adoption (3.0/1.0)
-|   |   |   |   |   |   |   |   Month = December: Transfer (0.0)
-|   |   |   |   |   |   |   |   Month = June: Return_to_owner (2.0/1.0)
-|   |   |   |   |   |   |   |   Month = September: Return_to_owner (1.0)
-|   |   |   |   |   |   |   |   Month = August: Transfer (2.0)
-|   |   |   |   |   |   |   DayPeriod = Morning: Adoption (17.0/9.0)
-|   |   |   |   |   |   |   DayPeriod = Evening: Adoption (0.0)
-|   |   |   |   |   |   WeekDay = Mon
-|   |   |   |   |   |   |   Month = February: Euthanasia (3.0/2.0)
-|   |   |   |   |   |   |   Month = October: Euthanasia (2.0/1.0)
-|   |   |   |   |   |   |   Month = January: Adoption (5.0/1.0)
-|   |   |   |   |   |   |   Month = July: Euthanasia (4.0/1.0)
-|   |   |   |   |   |   |   Month = November: Transfer (3.0/1.0)
-|   |   |   |   |   |   |   Month = April
-|   |   |   |   |   |   |   |   DaysuponOutcome <= 3285: Adoption (2.0/1.0)
-|   |   |   |   |   |   |   |   DaysuponOutcome > 3285: Return_to_owner (2.0)
-|   |   |   |   |   |   |   Month = March: Adoption (0.0)
-|   |   |   |   |   |   |   Month = May: Adoption (3.0/1.0)
-|   |   |   |   |   |   |   Month = December: Adoption (5.0/2.0)
+|   |   |   |   |   |   |   |   DaysuponOutcome <= 365: Adoption (2.0)
+|   |   |   |   |   |   |   |   DaysuponOutcome > 365: Transfer (7.0/1.0)
+|   |   |   |   |   |   |   DayPeriod = Morning
+|   |   |   |   |   |   |   |   DaysuponOutcome <= 365: Transfer (5.0/1.0)
+|   |   |   |   |   |   |   |   DaysuponOutcome > 365: Adoption (3.0)
+|   |   |   |   |   |   |   DayPeriod = Evening: Return_to_owner (1.0)
+|   |   |   |   |   |   Month = November
+|   |   |   |   |   |   |   DayPeriod = Afternoon
+|   |   |   |   |   |   |   |   DaysuponOutcome <= 2190: Transfer (16.0/6.0)
+|   |   |   |   |   |   |   |   DaysuponOutcome > 2190: Adoption (2.0)
+|   |   |   |   |   |   |   DayPeriod = Morning: Return_to_owner (6.0/2.0)
+|   |   |   |   |   |   |   DayPeriod = Evening: Adoption (1.0)
+|   |   |   |   |   |   Month = April
+|   |   |   |   |   |   |   DaysuponOutcome <= 1825: Transfer (13.0/5.0)
+|   |   |   |   |   |   |   DaysuponOutcome > 1825: Return_to_owner (4.0/2.0)
+|   |   |   |   |   |   Month = March
+|   |   |   |   |   |   |   Sex = Male: Transfer (12.0/4.0)
+|   |   |   |   |   |   |   Sex = Female
+|   |   |   |   |   |   |   |   DaysuponOutcome <= 365: Return_to_owner (3.0/1.0)
+|   |   |   |   |   |   |   |   DaysuponOutcome > 365: Adoption (3.0/1.0)
+|   |   |   |   |   |   |   Sex = Unknown: Transfer (0.0)
+|   |   |   |   |   |   Month = May
+|   |   |   |   |   |   |   Sex = Male: Transfer (12.0/5.0)
+|   |   |   |   |   |   |   Sex = Female: Adoption (16.0/8.0)
+|   |   |   |   |   |   |   Sex = Unknown: Transfer (0.0)
+|   |   |   |   |   |   Month = December
+|   |   |   |   |   |   |   DayPeriod = Afternoon: Transfer (28.0/12.0)
+|   |   |   |   |   |   |   DayPeriod = Morning: Adoption (6.0/2.0)
+|   |   |   |   |   |   |   DayPeriod = Evening: Transfer (4.0/1.0)
+|   |   |   |   |   |   Month = June
+|   |   |   |   |   |   |   Sex = Male: Return_to_owner (7.0/2.0)
+|   |   |   |   |   |   |   Sex = Female: Transfer (12.0/4.0)
+|   |   |   |   |   |   |   Sex = Unknown: Transfer (0.0)
+|   |   |   |   |   |   Month = September
+|   |   |   |   |   |   |   DayPeriod = Afternoon: Adoption (10.0/5.0)
+|   |   |   |   |   |   |   DayPeriod = Morning: Return_to_owner (3.0/1.0)
+|   |   |   |   |   |   |   DayPeriod = Evening: Adoption (1.0)
+|   |   |   |   |   |   Month = August
+|   |   |   |   |   |   |   Sex = Male: Transfer (13.0/7.0)
+|   |   |   |   |   |   |   Sex = Female
+|   |   |   |   |   |   |   |   IsHoliday = No: Adoption (7.0)
+|   |   |   |   |   |   |   |   IsHoliday = Yes: Return_to_owner (3.0/1.0)
+|   |   |   |   |   |   |   Sex = Unknown: Adoption (0.0)
+|   |   |   |   DaysuponOutcome > 2920
+|   |   |   |   |   WeekDay = Wed: Adoption (40.0/23.0)
+|   |   |   |   |   WeekDay = Sun: Adoption (49.0/13.0)
+|   |   |   |   |   WeekDay = Sat: Adoption (48.0/18.0)
+|   |   |   |   |   WeekDay = Fri
+|   |   |   |   |   |   DayPeriod = Afternoon: Adoption (36.0/14.0)
+|   |   |   |   |   |   DayPeriod = Morning: Transfer (14.0/8.0)
+|   |   |   |   |   |   DayPeriod = Evening: Adoption (1.0)
+|   |   |   |   |   WeekDay = Thu
+|   |   |   |   |   |   Month = February: Transfer (5.0/2.0)
+|   |   |   |   |   |   Month = October: Transfer (4.0/2.0)
+|   |   |   |   |   |   Month = January: Adoption (1.0)
+|   |   |   |   |   |   Month = July: Return_to_owner (0.0)
+|   |   |   |   |   |   Month = November: Return_to_owner (3.0/2.0)
+|   |   |   |   |   |   Month = April: Return_to_owner (0.0)
+|   |   |   |   |   |   Month = March: Euthanasia (1.0)
+|   |   |   |   |   |   Month = May: Return_to_owner (0.0)
+|   |   |   |   |   |   Month = December: Transfer (7.0/4.0)
+|   |   |   |   |   |   Month = June: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   Month = September: Return_to_owner (3.0/1.0)
+|   |   |   |   |   |   Month = August: Return_to_owner (2.0)
+|   |   |   |   |   WeekDay = Tue
+|   |   |   |   |   |   DayPeriod = Afternoon
+|   |   |   |   |   |   |   Month = February: Euthanasia (1.0)
+|   |   |   |   |   |   |   Month = October: Euthanasia (3.0/1.0)
+|   |   |   |   |   |   |   Month = January: Transfer (0.0)
+|   |   |   |   |   |   |   Month = July: Transfer (4.0)
+|   |   |   |   |   |   |   Month = November: Return_to_owner (1.0)
+|   |   |   |   |   |   |   Month = April: Transfer (2.0)
+|   |   |   |   |   |   |   Month = March
+|   |   |   |   |   |   |   |   Sex = Male: Euthanasia (2.0/1.0)
+|   |   |   |   |   |   |   |   Sex = Female: Return_to_owner (2.0)
+|   |   |   |   |   |   |   |   Sex = Unknown: Return_to_owner (0.0)
+|   |   |   |   |   |   |   Month = May: Adoption (4.0/1.0)
+|   |   |   |   |   |   |   Month = December: Transfer (0.0)
 |   |   |   |   |   |   |   Month = June: Return_to_owner (2.0/1.0)
-|   |   |   |   |   |   |   Month = September: Adoption (0.0)
-|   |   |   |   |   |   |   Month = August: Return_to_owner (3.0/2.0)
-|   |   |   |   |   BreedGroup = Pit Bull: Adoption (0.0)
-|   |   |   |   |   BreedGroup = Non-Sporting: Adoption (0.0)
-|   |   |   |   |   BreedGroup = Terrier: Adoption (0.0)
-|   |   |   |   |   BreedGroup = Toy: Adoption (0.0)
-|   |   |   |   |   BreedGroup = Working: Adoption (0.0)
-|   |   |   |   |   BreedGroup = Group 2: Adoption (20.0/8.0)
-|   |   |   |   |   BreedGroup = Unknown: Adoption (0.0)
-|   |   |   |   |   BreedGroup = Hound: Adoption (0.0)
-|   |   |   |   |   BreedGroup = Group 3: Adoption (16.0/5.0)
-|   |   |   |   |   BreedGroup = Sporting: Adoption (0.0)
-|   |   |   |   |   BreedGroup = Group 1
-|   |   |   |   |   |   Sex = Male
-|   |   |   |   |   |   |   DaysuponOutcome <= 4380: Transfer (4.0/1.0)
-|   |   |   |   |   |   |   DaysuponOutcome > 4380: Return_to_owner (2.0)
-|   |   |   |   |   |   Sex = Female: Adoption (9.0)
-|   |   |   |   |   |   Sex = Unknown: Adoption (0.0)
-|   |   |   |   |   BreedGroup = Terrier&Toy: Adoption (0.0)
+|   |   |   |   |   |   |   Month = September: Return_to_owner (2.0)
+|   |   |   |   |   |   |   Month = August: Transfer (2.0)
+|   |   |   |   |   |   DayPeriod = Morning: Adoption (22.0/10.0)
+|   |   |   |   |   |   DayPeriod = Evening: Adoption (0.0)
+|   |   |   |   |   WeekDay = Mon: Adoption (40.0/24.0)
 |   |   HasName = No
 |   |   |   DaysuponOutcome <= 2555
 |   |   |   |   AnimalType = Dog
-|   |   |   |   |   BreedGroup = Herding
-|   |   |   |   |   |   DaysuponOutcome <= 1460: Adoption (65.0/19.0)
-|   |   |   |   |   |   DaysuponOutcome > 1460
-|   |   |   |   |   |   |   Sex = Male: Euthanasia (2.0)
-|   |   |   |   |   |   |   Sex = Female: Return_to_owner (2.0/1.0)
-|   |   |   |   |   |   |   Sex = Unknown: Euthanasia (0.0)
+|   |   |   |   |   BreedGroup = Herding: Adoption (69.0/22.0)
 |   |   |   |   |   BreedGroup = Group 4: Adoption (0.0)
 |   |   |   |   |   BreedGroup = Pit Bull: Adoption (24.0/10.0)
-|   |   |   |   |   BreedGroup = Non-Sporting: Transfer (37.0/15.0)
-|   |   |   |   |   BreedGroup = Terrier
-|   |   |   |   |   |   IsMix = Yes: Adoption (94.0/29.0)
-|   |   |   |   |   |   IsMix = No: Transfer (13.0/5.0)
+|   |   |   |   |   BreedGroup = Non-Sporting
+|   |   |   |   |   |   Season = Winter
+|   |   |   |   |   |   |   IsPopularBreed = No: Adoption (10.0/2.0)
+|   |   |   |   |   |   |   IsPopularBreed = Yes: Transfer (5.0/1.0)
+|   |   |   |   |   |   Season = Fall: Transfer (10.0/2.0)
+|   |   |   |   |   |   Season = Summer
+|   |   |   |   |   |   |   IsPopularBreed = No: Transfer (4.0/1.0)
+|   |   |   |   |   |   |   IsPopularBreed = Yes: Adoption (2.0)
+|   |   |   |   |   |   Season = Spring: Transfer (6.0/1.0)
+|   |   |   |   |   BreedGroup = Terrier: Adoption (107.0/37.0)
 |   |   |   |   |   BreedGroup = Toy
 |   |   |   |   |   |   DayPeriod = Afternoon: Adoption (214.0/78.0)
 |   |   |   |   |   |   DayPeriod = Morning: Transfer (52.0/19.0)
 |   |   |   |   |   |   DayPeriod = Evening: Adoption (23.0/7.0)
 |   |   |   |   |   BreedGroup = Working
-|   |   |   |   |   |   IsMix = Yes: Adoption (36.0/14.0)
-|   |   |   |   |   |   IsMix = No: Transfer (8.0/2.0)
+|   |   |   |   |   |   DaysuponOutcome <= 1095: Adoption (38.0/15.0)
+|   |   |   |   |   |   DaysuponOutcome > 1095: Transfer (6.0/2.0)
 |   |   |   |   |   BreedGroup = Group 2: Adoption (0.0)
 |   |   |   |   |   BreedGroup = Unknown: Adoption (12.0/4.0)
 |   |   |   |   |   BreedGroup = Hound
 |   |   |   |   |   |   DaysuponOutcome <= 1095: Adoption (58.0/14.0)
-|   |   |   |   |   |   DaysuponOutcome > 1095
-|   |   |   |   |   |   |   IsPopularBreed = No: Transfer (17.0/5.0)
-|   |   |   |   |   |   |   IsPopularBreed = Yes
-|   |   |   |   |   |   |   |   Sex = Male: Transfer (2.0)
-|   |   |   |   |   |   |   |   Sex = Female: Return_to_owner (4.0/2.0)
-|   |   |   |   |   |   |   |   Sex = Unknown: Return_to_owner (0.0)
+|   |   |   |   |   |   DaysuponOutcome > 1095: Transfer (23.0/9.0)
 |   |   |   |   |   BreedGroup = Group 3: Adoption (0.0)
-|   |   |   |   |   BreedGroup = Sporting
-|   |   |   |   |   |   IsSingleColor = No: Adoption (28.0/7.0)
-|   |   |   |   |   |   IsSingleColor = Yes: Transfer (34.0/16.0)
+|   |   |   |   |   BreedGroup = Sporting: Adoption (62.0/31.0)
 |   |   |   |   |   BreedGroup = Group 1: Adoption (0.0)
 |   |   |   |   |   BreedGroup = Terrier&Toy: Adoption (1.0)
 |   |   |   |   AnimalType = Cat
@@ -1342,12 +859,12 @@ Castrated = No
 |   |   |   |   |   |   |   |   IsHoliday = No: Transfer (6.0/1.0)
 |   |   |   |   |   |   |   |   IsHoliday = Yes: Return_to_owner (7.0/1.0)
 |   |   |   |   |   |   |   DayPeriod = Morning
-|   |   |   |   |   |   |   |   IsSingleColor = No: Return_to_owner (2.0)
-|   |   |   |   |   |   |   |   IsSingleColor = Yes: Transfer (3.0/1.0)
+|   |   |   |   |   |   |   |   DaysuponOutcome <= 1095: Transfer (3.0/1.0)
+|   |   |   |   |   |   |   |   DaysuponOutcome > 1095: Return_to_owner (2.0)
 |   |   |   |   |   |   |   DayPeriod = Evening: Transfer (1.0)
 |   |   |   |   |   |   Month = June
-|   |   |   |   |   |   |   DaysuponOutcome <= 330: Transfer (2.0)
-|   |   |   |   |   |   |   DaysuponOutcome > 330: Return_to_owner (10.0/3.0)
+|   |   |   |   |   |   |   IsHoliday = No: Return_to_owner (9.0/3.0)
+|   |   |   |   |   |   |   IsHoliday = Yes: Transfer (3.0/1.0)
 |   |   |   |   |   |   Month = September
 |   |   |   |   |   |   |   IsPopularBreed = No: Transfer (10.0/4.0)
 |   |   |   |   |   |   |   IsPopularBreed = Yes: Return_to_owner (6.0)
@@ -1367,9 +884,7 @@ Castrated = No
 |   |   |   |   |   |   |   |   Season = Spring: Transfer (3.0)
 |   |   |   |   |   |   |   DaysuponOutcome > 330: Return_to_owner (172.0/86.0)
 |   |   |   |   |   |   Sex = Female
-|   |   |   |   |   |   |   WeekDay = Wed
-|   |   |   |   |   |   |   |   IsSingleColor = No: Return_to_owner (11.0/4.0)
-|   |   |   |   |   |   |   |   IsSingleColor = Yes: Euthanasia (4.0/2.0)
+|   |   |   |   |   |   |   WeekDay = Wed: Return_to_owner (15.0/8.0)
 |   |   |   |   |   |   |   WeekDay = Sun
 |   |   |   |   |   |   |   |   DaysuponOutcome <= 730: Transfer (8.0/3.0)
 |   |   |   |   |   |   |   |   DaysuponOutcome > 730: Return_to_owner (2.0/1.0)
@@ -1383,43 +898,11 @@ Castrated = No
 |   |   |   |   |   |   |   |   DayPeriod = Evening: Adoption (1.0)
 |   |   |   |   |   |   |   WeekDay = Fri: Transfer (24.0/9.0)
 |   |   |   |   |   |   |   WeekDay = Thu: Transfer (26.0/16.0)
-|   |   |   |   |   |   |   WeekDay = Tue
-|   |   |   |   |   |   |   |   DaysuponOutcome <= 365: Return_to_owner (6.0/3.0)
-|   |   |   |   |   |   |   |   DaysuponOutcome > 365: Euthanasia (12.0/5.0)
+|   |   |   |   |   |   |   WeekDay = Tue: Euthanasia (18.0/11.0)
 |   |   |   |   |   |   |   WeekDay = Mon: Return_to_owner (23.0/12.0)
 |   |   |   |   |   |   Sex = Unknown: Return_to_owner (0.0)
 |   |   |   |   |   BreedGroup = Non-Sporting: Return_to_owner (73.0/37.0)
-|   |   |   |   |   BreedGroup = Terrier
-|   |   |   |   |   |   Season = Winter
-|   |   |   |   |   |   |   IsPopularBreed = No: Return_to_owner (18.0/7.0)
-|   |   |   |   |   |   |   IsPopularBreed = Yes: Transfer (3.0/1.0)
-|   |   |   |   |   |   Season = Fall
-|   |   |   |   |   |   |   IsSingleColor = No
-|   |   |   |   |   |   |   |   DaysuponOutcome <= 1825
-|   |   |   |   |   |   |   |   |   Month = February: Return_to_owner (0.0)
-|   |   |   |   |   |   |   |   |   Month = October: Euthanasia (5.0/1.0)
-|   |   |   |   |   |   |   |   |   Month = January: Return_to_owner (0.0)
-|   |   |   |   |   |   |   |   |   Month = July: Return_to_owner (0.0)
-|   |   |   |   |   |   |   |   |   Month = November
-|   |   |   |   |   |   |   |   |   |   DaysuponOutcome <= 730: Return_to_owner (2.0)
-|   |   |   |   |   |   |   |   |   |   DaysuponOutcome > 730: Euthanasia (3.0/1.0)
-|   |   |   |   |   |   |   |   |   Month = April: Return_to_owner (0.0)
-|   |   |   |   |   |   |   |   |   Month = March: Return_to_owner (0.0)
-|   |   |   |   |   |   |   |   |   Month = May: Return_to_owner (0.0)
-|   |   |   |   |   |   |   |   |   Month = December: Return_to_owner (2.0)
-|   |   |   |   |   |   |   |   |   Month = June: Return_to_owner (0.0)
-|   |   |   |   |   |   |   |   |   Month = September: Return_to_owner (0.0)
-|   |   |   |   |   |   |   |   |   Month = August: Return_to_owner (0.0)
-|   |   |   |   |   |   |   |   DaysuponOutcome > 1825: Transfer (4.0/1.0)
-|   |   |   |   |   |   |   IsSingleColor = Yes
-|   |   |   |   |   |   |   |   DaysuponOutcome <= 365: Transfer (4.0/1.0)
-|   |   |   |   |   |   |   |   DaysuponOutcome > 365: Return_to_owner (6.0/1.0)
-|   |   |   |   |   |   Season = Summer
-|   |   |   |   |   |   |   IsSingleColor = No: Return_to_owner (15.0/5.0)
-|   |   |   |   |   |   |   IsSingleColor = Yes: Transfer (7.0/2.0)
-|   |   |   |   |   |   Season = Spring
-|   |   |   |   |   |   |   IsSingleColor = No: Transfer (11.0/3.0)
-|   |   |   |   |   |   |   IsSingleColor = Yes: Return_to_owner (4.0/1.0)
+|   |   |   |   |   BreedGroup = Terrier: Return_to_owner (84.0/44.0)
 |   |   |   |   |   BreedGroup = Toy
 |   |   |   |   |   |   IsPopularBreed = No: Transfer (284.0/101.0)
 |   |   |   |   |   |   IsPopularBreed = Yes: Return_to_owner (52.0/26.0)
@@ -1453,17 +936,21 @@ Castrated = No
 |   |   |   |   |   |   |   DaysuponOutcome <= 730: Transfer (10.0/1.0)
 |   |   |   |   |   |   |   DaysuponOutcome > 730: Return_to_owner (7.0/2.0)
 |   |   |   |   |   |   Month = January
-|   |   |   |   |   |   |   DayPeriod = Afternoon: Transfer (9.0/5.0)
-|   |   |   |   |   |   |   DayPeriod = Morning: Return_to_owner (4.0/1.0)
-|   |   |   |   |   |   |   DayPeriod = Evening: Return_to_owner (1.0)
+|   |   |   |   |   |   |   WeekDay = Wed: Return_to_owner (1.0)
+|   |   |   |   |   |   |   WeekDay = Sun: Transfer (3.0/1.0)
+|   |   |   |   |   |   |   WeekDay = Sat: Euthanasia (3.0/1.0)
+|   |   |   |   |   |   |   WeekDay = Fri: Transfer (3.0/1.0)
+|   |   |   |   |   |   |   WeekDay = Thu: Return_to_owner (0.0)
+|   |   |   |   |   |   |   WeekDay = Tue: Return_to_owner (2.0/1.0)
+|   |   |   |   |   |   |   WeekDay = Mon: Adoption (2.0/1.0)
 |   |   |   |   |   |   Month = July: Transfer (13.0/3.0)
 |   |   |   |   |   |   Month = November: Transfer (26.0/15.0)
 |   |   |   |   |   |   Month = April
 |   |   |   |   |   |   |   DaysuponOutcome <= 1095: Return_to_owner (3.0/1.0)
 |   |   |   |   |   |   |   DaysuponOutcome > 1095: Transfer (3.0)
 |   |   |   |   |   |   Month = March
-|   |   |   |   |   |   |   IsSingleColor = No: Return_to_owner (3.0)
-|   |   |   |   |   |   |   IsSingleColor = Yes: Euthanasia (3.0/1.0)
+|   |   |   |   |   |   |   DaysuponOutcome <= 1460: Euthanasia (3.0/1.0)
+|   |   |   |   |   |   |   DaysuponOutcome > 1460: Return_to_owner (3.0)
 |   |   |   |   |   |   Month = May
 |   |   |   |   |   |   |   DayPeriod = Afternoon: Transfer (6.0/2.0)
 |   |   |   |   |   |   |   DayPeriod = Morning
@@ -1471,14 +958,13 @@ Castrated = No
 |   |   |   |   |   |   |   |   IsHoliday = Yes: Return_to_owner (2.0/1.0)
 |   |   |   |   |   |   |   DayPeriod = Evening: Return_to_owner (1.0)
 |   |   |   |   |   |   Month = December
-|   |   |   |   |   |   |   IsHoliday = No
-|   |   |   |   |   |   |   |   IsSingleColor = No: Transfer (2.0)
-|   |   |   |   |   |   |   |   IsSingleColor = Yes: Return_to_owner (3.0)
+|   |   |   |   |   |   |   IsHoliday = No: Return_to_owner (5.0/2.0)
 |   |   |   |   |   |   |   IsHoliday = Yes: Euthanasia (2.0/1.0)
 |   |   |   |   |   |   Month = June: Return_to_owner (15.0/8.0)
 |   |   |   |   |   |   Month = September
-|   |   |   |   |   |   |   IsSingleColor = No: Transfer (7.0)
-|   |   |   |   |   |   |   IsSingleColor = Yes: Return_to_owner (5.0/2.0)
+|   |   |   |   |   |   |   DayPeriod = Afternoon: Transfer (8.0/1.0)
+|   |   |   |   |   |   |   DayPeriod = Morning: Return_to_owner (4.0/2.0)
+|   |   |   |   |   |   |   DayPeriod = Evening: Transfer (0.0)
 |   |   |   |   |   |   Month = August: Return_to_owner (9.0/3.0)
 |   |   |   |   |   BreedGroup = Group 1: Return_to_owner (0.0)
 |   |   |   |   |   BreedGroup = Terrier&Toy: Transfer (2.0)
@@ -1562,48 +1048,51 @@ Castrated = Unknown
 |   |   |   DayPeriod = Morning: Return_to_owner (3.0/1.0)
 |   |   |   DayPeriod = Evening: Transfer (2.0)
 |   |   DaysuponOutcome > 730
-|   |   |   IsMix = Yes
-|   |   |   |   Season = Winter: Euthanasia (0.0)
-|   |   |   |   Season = Fall: Return_to_owner (2.0)
-|   |   |   |   Season = Summer: Euthanasia (2.0)
-|   |   |   |   Season = Spring: Euthanasia (3.0)
-|   |   |   IsMix = No: Return_to_owner (2.0)
+|   |   |   Season = Winter: Euthanasia (0.0)
+|   |   |   Season = Fall: Return_to_owner (3.0)
+|   |   |   Season = Summer: Euthanasia (2.0)
+|   |   |   Season = Spring: Euthanasia (4.0/1.0)
 |   HasName = No
 |   |   DaysuponOutcome <= 21: Transfer (611.0/38.0)
 |   |   DaysuponOutcome > 21
 |   |   |   DaysuponOutcome <= 1460: Transfer (426.0/73.0)
 |   |   |   DaysuponOutcome > 1460: Euthanasia (19.0/6.0)
 
-Number of Leaves  : 	1136
+Number of Leaves  : 	761
 
-Size of the tree : 	1548
+Size of the tree : 	1034
 
 
-Time taken to build model: 1.23 seconds
+Time taken to build model: 1.27 seconds
 
 === Stratified cross-validation ===
 === Summary ===
 
-Correctly Classified Instances       17352               64.9183 %
-Incorrectly Classified Instances      9377               35.0817 %
+Correctly Classified Instances       17387               65.0492 %
+Incorrectly Classified Instances      9342               34.9508 %
+Kappa statistic                          0.4653
+Mean absolute error                      0.1857
+Root mean squared error                  0.3138
+Relative absolute error                 68.4724 %
+Root relative squared error             85.2233 %
 Total Number of Instances            26729     
 
 === Detailed Accuracy By Class ===
 
-                 Precision  Recall   F-Measure  Class
-                 0,462      0,401    0,430      Return_to_owner
-                 0,495      0,147    0,227      Euthanasia
-                 0,658      0,837    0,737      Adoption
-                 0,737      0,656    0,694      Transfer
-                 0,000      0,000    0,000      Died
-Weighted Avg.    0,636      0,649    0,632      
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,408    0,101    0,468      0,408    0,436      0,325    0,788     0,410     Return_to_owner
+                 0,149    0,009    0,519      0,149    0,231      0,256    0,786     0,244     Euthanasia
+                 0,839    0,297    0,656      0,839    0,736      0,532    0,841     0,725     Adoption
+                 0,655    0,125    0,740      0,655    0,695      0,546    0,804     0,724     Transfer
+                 0,000    0,000    0,000      0,000    0,000      -0,001   0,765     0,030     Died
+Weighted Avg.    0,650    0,182    0,639      0,650    0,633      0,480    0,814     0,635     
 
 === Confusion Matrix ===
 
     a    b    c    d    e   <-- classified as
- 1921   46 2179  639    1 |    a = Return_to_owner
-  362  229  227  734    3 |    b = Euthanasia
- 1044   27 9017  680    1 |    c = Adoption
-  815  152 2266 6185    4 |    d = Transfer
-   12    9   20  156    0 |    e = Died
+ 1954   37 2185  609    1 |    a = Return_to_owner
+  361  231  227  735    1 |    b = Euthanasia
+ 1039   23 9033  673    1 |    c = Adoption
+  806  144 2300 6169    3 |    d = Transfer
+   12   10   21  154    0 |    e = Died
 

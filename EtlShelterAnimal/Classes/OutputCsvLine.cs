@@ -14,10 +14,8 @@
             Sex = register.Sex;
             Castrated = register.Castrated;
             DaysuponOutcome = register.DaysuponOutcome;
-            IsMix = register.IsMix;
             BreedGroup = register.BreedGroup;
             IsPopularBreed = register.IsPopularBreed;
-            IsSingleColor = register.IsSingleColor;
             OutcomeType = register.OutcomeType ?? "Return_to_owner";
         }
 
@@ -41,13 +39,9 @@
 
         public int DaysuponOutcome { get; set; }
 
-        public string IsMix { get; set; }
-
         public string BreedGroup { get; set; }
 
         public string IsPopularBreed { get; set; }
-
-        public string IsSingleColor { get; set; }
 
         public string OutcomeType { get; set; }
     }

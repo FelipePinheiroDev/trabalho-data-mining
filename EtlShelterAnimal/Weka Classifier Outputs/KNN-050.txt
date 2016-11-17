@@ -3,7 +3,7 @@
 Scheme:       weka.classifiers.lazy.IBk -K 50 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
 Relation:     train
 Instances:    26729
-Attributes:   15
+Attributes:   13
               HasName
               DayPeriod
               WeekDay
@@ -14,10 +14,8 @@ Attributes:   15
               Sex
               Castrated
               DaysuponOutcome
-              IsMix
               BreedGroup
               IsPopularBreed
-              IsSingleColor
               OutcomeType
 Test mode:    10-fold cross-validation
 
@@ -32,26 +30,31 @@ Time taken to build model: 0.01 seconds
 === Stratified cross-validation ===
 === Summary ===
 
-Correctly Classified Instances       16853               63.0514 %
-Incorrectly Classified Instances      9876               36.9486 %
+Correctly Classified Instances       16843               63.014  %
+Incorrectly Classified Instances      9886               36.986  %
+Kappa statistic                          0.4185
+Mean absolute error                      0.1972
+Root mean squared error                  0.3132
+Relative absolute error                 72.702  %
+Root relative squared error             85.0534 %
 Total Number of Instances            26729     
 
 === Detailed Accuracy By Class ===
 
-                 Precision  Recall   F-Measure  Class
-                 0,481      0,281    0,355      Return_to_owner
-                 1,000      0,001    0,001      Euthanasia
-                 0,596      0,920    0,723      Adoption
-                 0,767      0,594    0,670      Transfer
-                 0,000      0,000    0,000      Died
-Weighted Avg.    0,655      0,631    0,591      
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,289    0,072    0,468      0,289    0,358      0,266    0,811     0,421     Return_to_owner
+                 0,001    0,000    0,500      0,001    0,001      0,016    0,776     0,206     Euthanasia
+                 0,908    0,407    0,601      0,908    0,723      0,503    0,848     0,773     Adoption
+                 0,603    0,105    0,758      0,603    0,672      0,530    0,822     0,758     Transfer
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,799     0,044     Died
+Weighted Avg.    0,630    0,214    0,622      0,630    0,592      0,438    0,828     0,666     
 
 === Confusion Matrix ===
 
     a    b    c    d    e   <-- classified as
- 1345    0 3058  383    0 |    a = Return_to_owner
-  289    1  401  864    0 |    b = Euthanasia
-  561    0 9907  301    0 |    c = Adoption
-  592    0 3230 5600    0 |    d = Transfer
-    7    0   35  155    0 |    e = Died
+ 1385    0 2981  420    0 |    a = Return_to_owner
+  276    1  390  888    0 |    b = Euthanasia
+  649    0 9774  346    0 |    c = Adoption
+  644    1 3094 5683    0 |    d = Transfer
+    8    0   32  157    0 |    e = Died
 

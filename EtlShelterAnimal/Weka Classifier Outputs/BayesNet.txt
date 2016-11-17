@@ -3,7 +3,7 @@
 Scheme:       weka.classifiers.bayes.BayesNet -D -Q weka.classifiers.bayes.net.search.local.K2 -- -P 1 -S BAYES -E weka.classifiers.bayes.net.estimate.SimpleEstimator -- -A 0.5
 Relation:     train
 Instances:    26729
-Attributes:   15
+Attributes:   13
               HasName
               DayPeriod
               WeekDay
@@ -14,10 +14,8 @@ Attributes:   15
               Sex
               Castrated
               DaysuponOutcome
-              IsMix
               BreedGroup
               IsPopularBreed
-              IsSingleColor
               OutcomeType
 Test mode:    10-fold cross-validation
 
@@ -25,7 +23,7 @@ Test mode:    10-fold cross-validation
 
 Bayes Network Classifier
 not using ADTree
-#attributes=15 #classindex=14
+#attributes=13 #classindex=12
 Network structure (nodes followed by parents)
 HasName(2): OutcomeType 
 DayPeriod(3): OutcomeType 
@@ -37,43 +35,46 @@ AnimalType(2): OutcomeType
 Sex(3): OutcomeType 
 Castrated(3): OutcomeType 
 DaysuponOutcome(12): OutcomeType 
-IsMix(2): OutcomeType 
 BreedGroup(14): OutcomeType 
 IsPopularBreed(2): OutcomeType 
-IsSingleColor(2): OutcomeType 
 OutcomeType(5): 
-LogScore Bayes: -424983.07065239566
-LogScore BDeu: -425991.802650999
-LogScore MDL: -425880.32909818465
-LogScore ENTROPY: -424432.85147377016
-LogScore AIC: -424716.85147377016
+LogScore Bayes: -401211.08832574345
+LogScore BDeu: -402201.45400839474
+LogScore MDL: -402088.0452593069
+LogScore ENTROPY: -400691.5351568789
+LogScore AIC: -400965.5351568789
 
 
-Time taken to build model: 0.45 seconds
+Time taken to build model: 0.13 seconds
 
 === Stratified cross-validation ===
 === Summary ===
 
-Correctly Classified Instances       16365               61.2256 %
-Incorrectly Classified Instances     10364               38.7744 %
+Correctly Classified Instances       16400               61.3566 %
+Incorrectly Classified Instances     10329               38.6434 %
+Kappa statistic                          0.4352
+Mean absolute error                      0.1824
+Root mean squared error                  0.3252
+Relative absolute error                 67.2578 %
+Root relative squared error             88.3213 %
 Total Number of Instances            26729     
 
 === Detailed Accuracy By Class ===
 
-                 Precision  Recall   F-Measure  Class
-                 0,403      0,716    0,515      Return_to_owner
-                 0,478      0,042    0,078      Euthanasia
-                 0,693      0,674    0,683      Adoption
-                 0,738      0,595    0,659      Transfer
-                 0,000      0,000    0,000      Died
-Weighted Avg.    0,639      0,612    0,605      
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,715    0,231    0,403      0,715    0,516      0,399    0,821     0,442     Return_to_owner
+                 0,044    0,003    0,500      0,044    0,082      0,136    0,785     0,238     Euthanasia
+                 0,678    0,203    0,692      0,678    0,685      0,476    0,844     0,764     Adoption
+                 0,595    0,112    0,743      0,595    0,660      0,512    0,796     0,741     Transfer
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,821     0,065     Died
+Weighted Avg.    0,614    0,163    0,642      0,614    0,606      0,452    0,820     0,662     
 
 === Confusion Matrix ===
 
     a    b    c    d    e   <-- classified as
- 3426   11 1107  242    0 |    a = Return_to_owner
-  537   66  125  827    0 |    b = Euthanasia
- 2748    5 7263  753    0 |    c = Adoption
- 1780   55 1977 5610    0 |    d = Transfer
+ 3423   11 1114  238    0 |    a = Return_to_owner
+  543   69  121  822    0 |    b = Euthanasia
+ 2745    2 7304  718    0 |    c = Adoption
+ 1766   55 1997 5604    0 |    d = Transfer
    16    1   15  165    0 |    e = Died
 

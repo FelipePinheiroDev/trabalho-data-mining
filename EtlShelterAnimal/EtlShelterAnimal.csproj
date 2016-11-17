@@ -79,12 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Weka Classifier Outputs\J48.txt" />
-    <Content Include="Weka Classifier Outputs\KNN-001.txt" />
-    <Content Include="Weka Classifier Outputs\KNN-010.txt" />
     <Content Include="Weka Classifier Outputs\KNN-050.txt" />
-    <Content Include="Weka Classifier Outputs\KNN-075.txt" />
-    <Content Include="Weka Classifier Outputs\KNN-100.txt" />
-    <Content Include="Weka Classifier Outputs\KNN-500.txt" />
     <Content Include="Weka Classifier Outputs\NaiveBayes.txt" />
     <None Include="App.config" />
     <Content Include="Data\breedGroups.csv">
